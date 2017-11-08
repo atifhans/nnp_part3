@@ -1,0 +1,8 @@
+# vsim -c tb_layer_4_5_1_16 -do "run -all; quit" 
+# Start time: 14:56:55 on Nov 08,2017
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: tb_layer_4_5_1_16.sv(20): (vopt-2135) Too many port connections. Expected 1, found 8.
+# Optimization failed
+# Error loading design
+# End time: 14:56:56 on Nov 08,2017, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
