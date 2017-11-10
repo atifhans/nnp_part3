@@ -123,6 +123,19 @@ int main(int argc, char* argv[]) {
    // close the output stream
    os.close();
 
+   int M = atoi(argv[2]);
+   int N = atoi(argv[3]);
+   int P = atoi(argv[4]);
+   int bits = atoi(argv[5]);
+
+   string out_file = "layer_" + to_string(M) + "_" + to_string(N) + "_" + to_string(P) + "_" + to_string(bits) + ".sv";
+
+   string append_mac_cmd = "cat mac.sv >> " + out_file;
+   string append_mem_cmd = "cat memory.sv >> " + out_file;
+
+   system(append_mac_cmd.c_str());
+   system(append_mem_cmd.c_str());
+
 }
 
 // Read values from the constant file into the vector
@@ -163,8 +176,217 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
 
    // Make your module name: layer_M_N_P_bits, where these parameters are replaced with the
    // actual numbers
-   os << "module " << modName << "();" << endl;
-   os << "   // your stuff here!" << endl;
+
+   //Generating File Header
+   os << "// ------------------------------------------//" << endl;
+   os << "// Neural Network Layer Generator - Part 1     " << endl;
+   os << "// ------------------------------------------//" << endl;
+   os << "// NAME:  Atif Iqbal                           " << endl;
+   os << "// NETID: aahangar                             " << endl;
+   os << "// SBUID: 111416569                            " << endl;
+   os << "// ------------------------------------------//" << endl;
+   os << endl << endl; 
+   
+   //Generating Module Header
+   os << "module " << modName << " #(" << endl;
+   os << "   parameter M = " << M << "," << endl;  //TOOD: implicit conversion. Use to_string 
+   os << "   parameter N = " << N << "," << endl;   
+   os << "   parameter P = " << P << "," << endl;   
+   os << "   parameter T = " << bits << ")" << endl;   
+   os << "(" << endl;
+   os << "   input  logic                   clk," << endl;
+   os << "   input  logic                   reset," << endl;
+   os << "   input  logic                   s_valid," << endl;
+   os << "   input  logic                   m_ready," << endl;
+   os << "   input  logic signed [T-1:0]    data_in," << endl;
+   os << "   output logic                   m_valid," << endl;
+   os << "   output logic                   s_ready," << endl;
+   os << "   output logic signed [T-1:0]    data_out" << endl;
+   os << ");" << endl << endl;
+
+   //Generating Parameters.
+   os << "   localparam MAT_W_SIZE = M * N;" << endl;
+   os << "   localparam VEC_b_SIZE = M;" << endl;
+   os << "   localparam VEC_x_SIZE = N;" << endl;
+   os << "   localparam VEC_y_SIZE = M;" << endl;
+   os << "   localparam MAT_W_ADDW = $clog2(MAT_W_SIZE);" << endl;
+   os << "   localparam VEC_b_ADDW = $clog2(VEC_b_SIZE);" << endl;
+   os << "   localparam VEC_x_ADDW = $clog2(VEC_x_SIZE);" << endl;
+   os << "   localparam VEC_y_ADDW = $clog2(VEC_y_SIZE);" << endl;
+   os << endl;
+
+   //Generating Internal Variables.
+   os << "   enum logic [1:0] {GET_x=0, COMPUTE_y=1} state, next_state;" << endl;
+   os << "   logic        [MAT_W_ADDW-1:0] rom_w_rd_addr;" << endl;
+   os << "   logic        [VEC_b_ADDW-1:0] rom_b_rd_addr;" << endl;
+   os << "   logic        [VEC_x_ADDW-1:0] ram_x_addr;" << endl;
+   os << "   logic        [VEC_x_ADDW-1:0] ram_x_wr_addr;" << endl;
+   os << "   logic        [VEC_x_ADDW-1:0] ram_x_rd_addr;" << endl;
+   os << "   logic signed          [T-1:0] rom_w_data_out;" << endl;
+   os << "   logic                 [T-1:0] rom_b_data_out;" << endl;
+   os << "   logic signed          [T-1:0] ram_x_data_out;" << endl;
+   os << "   logic                         ram_x_wr_en;" << endl;
+   os << "   logic        [VEC_x_ADDW-1:0] vec_cnt;" << endl;
+   os << "   logic                         next_req;" << endl;
+   os << "   logic                         mac_valid_in;" << endl;
+   os << "   logic                         mac_valid_out;" << endl;
+   os << endl;
+
+   //Generating Assign Statements
+   os << "   assign s_ready = (state == GET_x);" << endl;
+   os << "   assign ram_x_wr_en = s_ready & s_valid;" << endl;
+   os << "   assign ram_x_addr = (state == GET_x) ? ram_x_wr_addr : ram_x_rd_addr;" << endl;
+   os << endl;
+   
+   //Generating instantiations.
+   //Vec x memory
+   os << "   memory #(" << endl;
+   os << "      .WIDTH    ( T                     )," << endl;
+   os << "      .SIZE     ( VEC_x_SIZE            )," << endl;
+   os << "      .LOGSIZE  ( VEC_x_ADDW            ))" << endl;
+   os << "   u_vec_x_mem (" << endl;
+   os << "      .clk      ( clk                   )," << endl;
+   os << "      .data_in  ( data_in               )," << endl;
+   os << "      .data_out ( ram_x_data_out        )," << endl;
+   os << "      .addr     ( ram_x_addr            )," << endl;
+   os << "      .wr_en    ( ram_x_wr_en           ));" << endl;
+   os << endl;
+
+   //MAT a rom
+   os << "   layer_" << M << "_" << N << "_" << P << "_" << bits << "_W_rom u_w_rom (" << endl;
+   os << "       .clk     ( clk                   )," << endl;
+   os << "       .addr    ( rom_w_rd_addr         )," << endl;
+   os << "       .z       ( rom_w_data_out        ));" << endl;
+   os << endl;
+
+   //Vec b rom
+   os << "   layer_" << M << "_" << N << "_" << P << "_" << bits << "_B_rom u_b_rom (" << endl;
+   os << "       .clk     ( clk                   )," << endl;
+   os << "       .addr    ( rom_b_rd_addr         )," << endl;
+   os << "       .z       ( rom_b_data_out        ));" << endl;
+   os << endl;
+
+   //MAC
+   os << "   part3_mac #(" << endl;
+   os << "      .NUM_S     ( 1                    )," << endl; //TODO: change this to param.
+   os << "      .VEC_S     ( VEC_x_SIZE           ))" << endl;
+   os << "   u_mac (" << endl;
+   os << "      .clk       ( clk                  )," << endl;
+   os << "      .reset     ( reset                )," << endl;
+   os << "      .a         ( rom_w_data_out       )," << endl;
+   os << "      .b         ( ram_x_data_out       )," << endl;
+   os << "      .x         ( rom_b_data_out       )," << endl;
+   os << "      .valid_in  ( mac_valid_in         )," << endl;
+   os << "      .f         ( data_out             )," << endl;
+   os << "      .valid_out ( mac_valid_out        )," << endl;
+   os << "      .overflow  ( /* Not Used */       ));" << endl;
+   os << endl;
+
+   //FSM logic.
+   os << "   always_ff @(posedge clk)" << endl;
+   os << "      if(reset) begin" << endl;
+   os << "          state <= GET_x;" << endl;
+   os << "      end" << endl;
+   os << "      else begin" << endl;
+   os << "          state <= next_state;" << endl;
+   os << "      end" << endl;
+   os << endl;
+
+   os << "   always_comb begin" << endl;
+   os << "      next_state = GET_x;" << endl;
+   os << "      case (state)" << endl;
+   os << "          GET_x: begin" << endl;
+   os << "             if(ram_x_wr_addr == VEC_x_SIZE-1 && s_valid)" << endl;
+   os << "                next_state <= COMPUTE_y;" << endl;
+   os << "             else" << endl;
+   os << "                next_state <= GET_x;" << endl;
+   os << "          end" << endl;
+   os << "          COMPUTE_y: begin" << endl;
+   os << "             if(ram_x_rd_addr == VEC_x_SIZE-1 && next_req)" << endl;
+   os << "                next_state <= GET_x;" << endl;
+   os << "             else" << endl;
+   os << "                next_state <= COMPUTE_y;" << endl;
+   os << "          end" << endl;
+   os << "      endcase" << endl;
+   os << "   end" << endl;
+   os << endl;
+
+   //Other sequential logic.
+   os << "   always_ff @(posedge clk)" << endl;
+   os << "      if(reset) begin" << endl;
+   os << "         ram_x_wr_addr <= 'd0;" << endl;
+   os << "      end" << endl;
+   os << "      else begin" << endl;
+   os << "         if(ram_x_wr_addr == VEC_x_SIZE-1 && s_valid) begin" << endl;
+   os << "             ram_x_wr_addr <= 'd0;" << endl;
+   os << "         end" << endl;
+   os << "         else if (state == GET_x && s_valid) begin" << endl;
+   os << "             ram_x_wr_addr <= ram_x_wr_addr + 1'd1;" << endl;
+   os << "         end" << endl;
+   os << "      end" << endl;
+   os << endl;
+
+   os << "   always_ff @(posedge clk)" << endl;
+   os << "      if(reset) begin" << endl;
+   os << "         rom_w_rd_addr <= 'd0;" << endl;
+   os << "         rom_b_rd_addr <= 'd0;" << endl;
+   os << "         ram_x_rd_addr <= 'd0;" << endl;
+   os << "      end" << endl;
+   os << "      else begin" << endl;
+   os << "         if(rom_w_rd_addr == MAT_W_SIZE-1 && next_req) begin" << endl;
+   os << "            rom_w_rd_addr <= 'd0;" << endl;
+   os << "            rom_b_rd_addr <= 'd0;" << endl;
+   os << "            ram_x_rd_addr <= 'd0;" << endl;
+   os << "         end" << endl;
+   os << "         else if (ram_x_rd_addr == VEC_x_SIZE-1 && next_req) begin" << endl;
+   os << "            rom_w_rd_addr <= rom_w_rd_addr + 1'd1;" << endl;
+   os << "            rom_b_rd_addr <= rom_b_rd_addr + 1'd1;" << endl;
+   os << "            ram_x_rd_addr <= 'd0;" << endl;
+   os << "         end" << endl;
+   os << "         else if ((state == COMPUTE_y) && vec_cnt < M && next_req) begin" << endl;
+   os << "            rom_w_rd_addr <= rom_w_rd_addr + 1'd1;" << endl;
+   os << "            ram_x_rd_addr <= ram_x_rd_addr + 1'd1;" << endl;
+   os << "         end" << endl;
+   os << "      end" << endl;
+   os << endl;
+
+   os << "   always_ff @(posedge clk)" << endl;
+   os << "      if(reset) begin" << endl;
+   os << "         next_req     <= 1'b1;" << endl;
+   os << "         mac_valid_in <= 1'b0;" << endl;
+   os << "         vec_cnt      <=  'd0;" << endl;
+   os << "      end" << endl;
+   os << "      else begin" << endl;
+   os << "         if(vec_cnt == M) begin" << endl;
+   os << "            next_req      <= 1'b0;" << endl;
+   os << "            mac_valid_in  <= 1'b0;" << endl;
+   os << "            vec_cnt       <= 2'd0;" << endl;
+   os << "         end" << endl;
+   os << "         else if (m_valid && m_ready) begin" << endl;
+   os << "            next_req      <= 1'b1;" << endl;
+   os << "         end" << endl;
+   os << "         else if (next_req && (state == COMPUTE_y)) begin" << endl;
+   os << "            next_req      <= 1'b1;" << endl;
+   os << "            mac_valid_in  <= 1'b1;" << endl;
+   os << "            vec_cnt       <= vec_cnt + 1'd1;" << endl;
+   os << "         end" << endl;
+   os << "      end" << endl;
+   os << endl;
+
+   os << "   always_ff @(posedge clk)" << endl;
+   os << "      if(reset) begin" << endl;
+   os << "         m_valid <= 1'b0;" << endl;
+   os << "      end" << endl;
+   os << "      else begin" << endl;
+   os << "         if(mac_valid_out) begin" << endl;
+   os << "            m_valid <= 1'b1;" << endl;
+   os << "         end" << endl;
+   os << "         else if(m_valid && m_ready) begin" << endl;
+   os << "            m_valid <= 1'b0;" << endl;
+   os << "         end" << endl;
+   os << "      end" << endl;
+   os << endl;
+
    os << "endmodule" << endl << endl;
 
    // At some point you will want to generate a ROM with values from the pre-stored constant values.
