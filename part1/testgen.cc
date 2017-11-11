@@ -226,6 +226,7 @@ void computeOutputs(vector<long>& W, vector<long>& B, vector<long>& x, vector<lo
          for (int n=0; n<N; n++) {
             long prod = checkOverflow(W[m*N+n]*x[n+i*N], bits);
             y[m+i*M] = checkOverflow(y[m+i*M] + prod, bits);
+            //printf("W: %d, x: %d, prod: %d, y: %d\n", W[m*N+n], x[n+i*N], W[m*N+n]*x[n+i*N], y[m+i*M]);
          }
 	 y[m+i*M] = (y[m+i*M] < 0) ? 0 : y[m+i*M];
       }

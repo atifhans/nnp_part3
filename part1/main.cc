@@ -225,17 +225,21 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
    os << "   logic signed          [T-1:0] rom_w_data_out;" << endl;
    os << "   logic                 [T-1:0] rom_b_data_out;" << endl;
    os << "   logic signed          [T-1:0] ram_x_data_out;" << endl;
+   os << "   logic signed          [T-1:0] mac_data_out;" << endl;
    os << "   logic                         ram_x_wr_en;" << endl;
    os << "   logic        [VEC_x_ADDW-1:0] vec_cnt;" << endl;
    os << "   logic                         next_req;" << endl;
    os << "   logic                         mac_valid_in;" << endl;
    os << "   logic                         mac_valid_out;" << endl;
+   os << "   logic                         compute_done;" << endl;
    os << endl;
 
    //Generating Assign Statements
    os << "   assign s_ready = (state == GET_x);" << endl;
    os << "   assign ram_x_wr_en = s_ready & s_valid;" << endl;
    os << "   assign ram_x_addr = (state == GET_x) ? ram_x_wr_addr : ram_x_rd_addr;" << endl;
+   os << "   assign data_out = (mac_data_out < $signed(0)) ? 0 : mac_data_out;" << endl;
+   //os << "   assign mac_valid_in = next_req && (state == COMPUTE_y);" << endl;
    os << endl;
    
    //Generating instantiations.
@@ -268,16 +272,17 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
 
    //MAC
    os << "   part3_mac #(" << endl;
+   os << "      .T         ( T                    )," << endl;
    os << "      .NUM_S     ( 1                    )," << endl; //TODO: change this to param.
    os << "      .VEC_S     ( VEC_x_SIZE           ))" << endl;
    os << "   u_mac (" << endl;
    os << "      .clk       ( clk                  )," << endl;
    os << "      .reset     ( reset                )," << endl;
    os << "      .a         ( rom_w_data_out       )," << endl;
-   os << "      .b         ( ram_x_data_out       )," << endl;
-   os << "      .x         ( rom_b_data_out       )," << endl;
+   os << "      .b         ( rom_b_data_out       )," << endl;
+   os << "      .x         ( ram_x_data_out       )," << endl;
    os << "      .valid_in  ( mac_valid_in         )," << endl;
-   os << "      .f         ( data_out             )," << endl;
+   os << "      .f         ( mac_data_out         )," << endl;
    os << "      .valid_out ( mac_valid_out        )," << endl;
    os << "      .overflow  ( /* Not Used */       ));" << endl;
    os << endl;
@@ -302,7 +307,10 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
    os << "                next_state <= GET_x;" << endl;
    os << "          end" << endl;
    os << "          COMPUTE_y: begin" << endl;
-   os << "             if(ram_x_rd_addr == VEC_x_SIZE-1 && next_req)" << endl;
+   //os << "             if(ram_x_rd_addr == VEC_x_SIZE-1 && next_req)" << endl;
+   //os << "             if(vec_cnt == VEC_x_SIZE && next_req)" << endl;
+   //os << "             if(m_valid && m_ready)" << endl;
+   os << "             if(compute_done && m_valid && m_ready)" << endl;
    os << "                next_state <= GET_x;" << endl;
    os << "             else" << endl;
    os << "                next_state <= COMPUTE_y;" << endl;
@@ -331,21 +339,25 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
    os << "         rom_w_rd_addr <= 'd0;" << endl;
    os << "         rom_b_rd_addr <= 'd0;" << endl;
    os << "         ram_x_rd_addr <= 'd0;" << endl;
+   os << "         compute_done  <= 'd0;" << endl;
    os << "      end" << endl;
    os << "      else begin" << endl;
    os << "         if(rom_w_rd_addr == MAT_W_SIZE-1 && next_req) begin" << endl;
    os << "            rom_w_rd_addr <= 'd0;" << endl;
    os << "            rom_b_rd_addr <= 'd0;" << endl;
    os << "            ram_x_rd_addr <= 'd0;" << endl;
+   os << "            compute_done  <= 'd1;" << endl;
    os << "         end" << endl;
    os << "         else if (ram_x_rd_addr == VEC_x_SIZE-1 && next_req) begin" << endl;
    os << "            rom_w_rd_addr <= rom_w_rd_addr + 1'd1;" << endl;
    os << "            rom_b_rd_addr <= rom_b_rd_addr + 1'd1;" << endl;
    os << "            ram_x_rd_addr <= 'd0;" << endl;
+   os << "            compute_done  <= 'd0;" << endl;
    os << "         end" << endl;
-   os << "         else if ((state == COMPUTE_y) && vec_cnt < M && next_req) begin" << endl;
+   os << "         else if ((state == COMPUTE_y) && vec_cnt < VEC_x_SIZE && next_req) begin" << endl;
    os << "            rom_w_rd_addr <= rom_w_rd_addr + 1'd1;" << endl;
    os << "            ram_x_rd_addr <= ram_x_rd_addr + 1'd1;" << endl;
+   os << "            compute_done  <= 'd0;" << endl;
    os << "         end" << endl;
    os << "      end" << endl;
    os << endl;
@@ -357,7 +369,7 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
    os << "         vec_cnt      <=  'd0;" << endl;
    os << "      end" << endl;
    os << "      else begin" << endl;
-   os << "         if(vec_cnt == M) begin" << endl;
+   os << "         if(vec_cnt == VEC_x_SIZE) begin" << endl;
    os << "            next_req      <= 1'b0;" << endl;
    os << "            mac_valid_in  <= 1'b0;" << endl;
    os << "            vec_cnt       <= 2'd0;" << endl;
