@@ -211,7 +211,7 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
    os << "   localparam VEC_y_SIZE = M;" << endl;
    os << "   localparam MAT_W_ADDW = $clog2(MAT_W_SIZE);" << endl;
    os << "   localparam VEC_b_ADDW = $clog2(VEC_b_SIZE);" << endl;
-   os << "   localparam VEC_x_ADDW = $clog2(VEC_x_SIZE);" << endl;
+   os << "   localparam VEC_x_ADDW = $clog2(VEC_x_SIZE+1);" << endl;
    os << "   localparam VEC_y_ADDW = $clog2(VEC_y_SIZE);" << endl;
    os << endl;
 
@@ -302,18 +302,15 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
    os << "      case (state)" << endl;
    os << "          GET_x: begin" << endl;
    os << "             if(ram_x_wr_addr == VEC_x_SIZE-1 && s_valid)" << endl;
-   os << "                next_state <= COMPUTE_y;" << endl;
+   os << "                next_state = COMPUTE_y;" << endl;
    os << "             else" << endl;
-   os << "                next_state <= GET_x;" << endl;
+   os << "                next_state = GET_x;" << endl;
    os << "          end" << endl;
    os << "          COMPUTE_y: begin" << endl;
-   //os << "             if(ram_x_rd_addr == VEC_x_SIZE-1 && next_req)" << endl;
-   //os << "             if(vec_cnt == VEC_x_SIZE && next_req)" << endl;
-   //os << "             if(m_valid && m_ready)" << endl;
    os << "             if(compute_done && m_valid && m_ready)" << endl;
-   os << "                next_state <= GET_x;" << endl;
+   os << "                next_state = GET_x;" << endl;
    os << "             else" << endl;
-   os << "                next_state <= COMPUTE_y;" << endl;
+   os << "                next_state = COMPUTE_y;" << endl;
    os << "          end" << endl;
    os << "      endcase" << endl;
    os << "   end" << endl;
