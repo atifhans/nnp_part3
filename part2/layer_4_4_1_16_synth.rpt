@@ -54,21 +54,25 @@ Loading db file '/usr/local/synopsys/syn/libraries/syn/standard.sldb'
   Loading link library 'NangateOpenCellLibrary'
   Loading link library 'gtech'
 Running PRESTO HDLC
-Warning:  ./layer_4_4_1_16.sv:105: signed to unsigned conversion occurs. (VER-318)
-Warning:  ./layer_4_4_1_16.sv:124: signed to unsigned conversion occurs. (VER-318)
-Warning:  ./layer_4_4_1_16.sv:146: signed to unsigned conversion occurs. (VER-318)
-Warning:  ./layer_4_4_1_16.sv:140: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:64: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:119: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:138: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:158: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:153: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:225: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:242: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:60: unsigned to signed assignment occurs. (VER-318)
 
-Statistics for case statements in always block at line 101 in file
+Statistics for case statements in always block at line 115 in file
 	'./layer_4_4_1_16.sv'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           103            |    auto/auto     |
+|           117            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine layer_4_4_1_16 line 93 in file
+	in routine layer_4_4_1_16 line 107 in file
 		'./layer_4_4_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -77,7 +81,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine layer_4_4_1_16 line 119 in file
+	in routine layer_4_4_1_16 line 133 in file
 		'./layer_4_4_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -86,35 +90,54 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine layer_4_4_1_16 line 132 in file
+	in routine layer_4_4_1_16 line 146 in file
+		'./layer_4_4_1_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_4_4_1_16 line 169 in file
 		'./layer_4_4_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
 |  compute_done_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
-|  rom_w_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
-|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
-|  ram_x_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|   output_cnt_reg    | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
 
 Inferred memory devices in process
-	in routine layer_4_4_1_16 line 159 in file
+	in routine layer_4_4_1_16 line 187 in file
 		'./layer_4_4_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|     vec_cnt_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|   vld_in_cnt_reg    | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
 |    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 |  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
 
 Inferred memory devices in process
-	in routine layer_4_4_1_16 line 181 in file
+	in routine layer_4_4_1_16 line 220 in file
 		'./layer_4_4_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|     m_valid_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   vld_out_cnt_reg   | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_4_4_1_16 line 233 in file
+		'./layer_4_4_1_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    valid_int_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully.
 Elaborated 1 design.
@@ -123,7 +146,7 @@ Information: Building the design 'memory' instantiated from design 'layer_4_4_1_
 	the parameters "WIDTH=16,SIZE=4,LOGSIZE=3". (HDL-193)
 
 Inferred memory devices in process
-	in routine memory_WIDTH16_SIZE4_LOGSIZE3 line 387 in file
+	in routine memory_WIDTH16_SIZE4_LOGSIZE3 line 446 in file
 		'./layer_4_4_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -138,25 +161,26 @@ Statistics for MUX_OPs
 ============================================================================
 |         block name/line           | Inputs | Outputs | # sel inputs | MB |
 ============================================================================
-| memory_WIDTH16_SIZE4_LOGSIZE3/388 |   4    |   16    |      2       | N  |
+| memory_WIDTH16_SIZE4_LOGSIZE3/447 |   4    |   16    |      2       | N  |
 ============================================================================
 Presto compilation completed successfully.
-Information: Building the design 'layer_4_4_1_16_W_rom'. (HDL-193)
-Warning:  ./layer_4_4_1_16.sv:203: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_4_4_1_16.sv:206: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_4_4_1_16.sv:207: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_4_4_1_16.sv:215: unsigned to signed assignment occurs. (VER-318)
+Information: Building the design 'layer_4_4_1_16_W_rom_0'. (HDL-193)
+Warning:  ./layer_4_4_1_16.sv:262: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:267: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:268: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:270: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:275: unsigned to signed assignment occurs. (VER-318)
 
-Statistics for case statements in always block at line 200 in file
+Statistics for case statements in always block at line 259 in file
 	'./layer_4_4_1_16.sv'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           201            |    auto/auto     |
+|           260            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine layer_4_4_1_16_W_rom line 200 in file
+	in routine layer_4_4_1_16_W_rom_0 line 259 in file
 		'./layer_4_4_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -164,20 +188,20 @@ Inferred memory devices in process
 |        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully.
-Information: Building the design 'layer_4_4_1_16_B_rom'. (HDL-193)
-Warning:  ./layer_4_4_1_16.sv:229: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_4_4_1_16.sv:231: unsigned to signed assignment occurs. (VER-318)
+Information: Building the design 'layer_4_4_1_16_B_rom_0'. (HDL-193)
+Warning:  ./layer_4_4_1_16.sv:288: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:289: unsigned to signed assignment occurs. (VER-318)
 
-Statistics for case statements in always block at line 226 in file
+Statistics for case statements in always block at line 285 in file
 	'./layer_4_4_1_16.sv'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           227            |    auto/auto     |
+|           286            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine layer_4_4_1_16_B_rom line 226 in file
+	in routine layer_4_4_1_16_B_rom_0 line 285 in file
 		'./layer_4_4_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -187,12 +211,12 @@ Inferred memory devices in process
 Presto compilation completed successfully.
 Information: Building the design 'part3_mac' instantiated from design 'layer_4_4_1_16' with
 	the parameters "T=16,NUM_S=1,VEC_S=4". (HDL-193)
-Warning:  ./layer_4_4_1_16.sv:357: signed to unsigned conversion occurs. (VER-318)
-Warning:  ./layer_4_4_1_16.sv:358: signed to unsigned conversion occurs. (VER-318)
-Warning:  ./layer_4_4_1_16.sv:277: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:416: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:417: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_4_4_1_16.sv:336: signed to unsigned conversion occurs. (VER-318)
 
 Inferred memory devices in process
-	in routine part3_mac_T16_NUM_S1_VEC_S4 line 312 in file
+	in routine part3_mac_T16_NUM_S1_VEC_S4 line 371 in file
 		'./layer_4_4_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -204,7 +228,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine part3_mac_T16_NUM_S1_VEC_S4 line 333 in file
+	in routine part3_mac_T16_NUM_S1_VEC_S4 line 392 in file
 		'./layer_4_4_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -214,7 +238,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine part3_mac_T16_NUM_S1_VEC_S4 line 349 in file
+	in routine part3_mac_T16_NUM_S1_VEC_S4 line 408 in file
 		'./layer_4_4_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -225,7 +249,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine part3_mac_T16_NUM_S1_VEC_S4 line 367 in file
+	in routine part3_mac_T16_NUM_S1_VEC_S4 line 426 in file
 		'./layer_4_4_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -266,15 +290,15 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 
 Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
 
-Information: There are 7 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 11 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 Loaded alib file './alib-52/NangateOpenCellLibrary_typical.db.alib'
   Building model 'DW01_NAND2'
-Information: Ungrouping hierarchy u_vec_x_mem before Pass 1 (OPT-776)
-Information: Ungrouping hierarchy u_w_rom before Pass 1 (OPT-776)
-Information: Ungrouping hierarchy u_b_rom before Pass 1 (OPT-776)
-Information: Ungrouping hierarchy u_mac before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_0 before Pass 1 (OPT-776)
 Information: Ungrouping 4 of 5 hierarchies before Pass 1 (OPT-775)
 Information: State dependent leakage is now switched from on to off.
 
@@ -282,47 +306,46 @@ Information: State dependent leakage is now switched from on to off.
   ------------------------
   Processing 'layer_4_4_1_16'
 Information: Added key list 'DesignWare' to design 'layer_4_4_1_16'. (DDB-72)
-Information: The register 'u_b_rom/z_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[4]' is a constant and will be removed. (OPT-1206)
 Information: The register 'state_reg[1]' is a constant and will be removed. (OPT-1206)
-Information: In design 'layer_4_4_1_16', the register 'u_w_rom/z_reg[14]' is removed because it is merged to 'u_w_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_w_rom/z_reg[13]' is removed because it is merged to 'u_w_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_w_rom/z_reg[12]' is removed because it is merged to 'u_w_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_w_rom/z_reg[11]' is removed because it is merged to 'u_w_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_w_rom/z_reg[10]' is removed because it is merged to 'u_w_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_w_rom/z_reg[9]' is removed because it is merged to 'u_w_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_w_rom/z_reg[8]' is removed because it is merged to 'u_w_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_w_rom/z_reg[7]' is removed because it is merged to 'u_w_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_b_rom/z_reg[14]' is removed because it is merged to 'u_b_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_b_rom/z_reg[13]' is removed because it is merged to 'u_b_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_b_rom/z_reg[12]' is removed because it is merged to 'u_b_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_b_rom/z_reg[11]' is removed because it is merged to 'u_b_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_b_rom/z_reg[10]' is removed because it is merged to 'u_b_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_b_rom/z_reg[9]' is removed because it is merged to 'u_b_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_b_rom/z_reg[8]' is removed because it is merged to 'u_b_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_b_rom/z_reg[7]' is removed because it is merged to 'u_b_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_b_rom/z_reg[5]' is removed because it is merged to 'u_b_rom/z_reg[15]'. (OPT-1215)
-Information: In design 'layer_4_4_1_16', the register 'u_b_rom/z_reg[3]' is removed because it is merged to 'u_b_rom/z_reg[6]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_w_rom_0/z_reg[14]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_w_rom_0/z_reg[13]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_w_rom_0/z_reg[12]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_w_rom_0/z_reg[11]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_w_rom_0/z_reg[10]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_w_rom_0/z_reg[9]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_w_rom_0/z_reg[8]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_w_rom_0/z_reg[7]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_b_rom_0/z_reg[14]' is removed because it is merged to 'u_b_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_b_rom_0/z_reg[13]' is removed because it is merged to 'u_b_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_b_rom_0/z_reg[12]' is removed because it is merged to 'u_b_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_b_rom_0/z_reg[11]' is removed because it is merged to 'u_b_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_b_rom_0/z_reg[10]' is removed because it is merged to 'u_b_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_b_rom_0/z_reg[9]' is removed because it is merged to 'u_b_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_b_rom_0/z_reg[8]' is removed because it is merged to 'u_b_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_b_rom_0/z_reg[7]' is removed because it is merged to 'u_b_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_4_4_1_16', the register 'u_b_rom_0/z_reg[5]' is removed because it is merged to 'u_b_rom_0/z_reg[6]'. (OPT-1215)
  Implement Synthetic for 'layer_4_4_1_16'.
-Information: The register 'u_mac/b_int_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_0/b_int_reg[4]' is a constant and will be removed. (OPT-1206)
 
   Updating timing information
 Information: Updating design information... (UID-85)
-Information: The register 'u_mac/vec_cnt_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_0/vec_cnt_reg[2]' is a constant and will be removed. (OPT-1206)
 Information: The register 'ram_x_wr_addr_reg[2]' is a constant and will be removed. (OPT-1206)
 
   Beginning Mapping Optimizations  (Ultra High effort)
   -------------------------------
   Mapping Optimization (Phase 1)
-Information: The register 'ram_x_rd_addr_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[0][2]' is a constant and will be removed. (OPT-1206)
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:03    2407.8      0.20       1.7      36.3                           55773.2812
-    0:00:03    2407.8      0.20       1.7      36.3                           55773.2812
-    0:00:03    2407.8      0.20       1.7      36.3                           55773.2812
-    0:00:03    2407.0      0.20       1.7      36.3                           55736.8516
+    0:00:03    2486.3      0.25       2.0      37.8                           56668.0312
+    0:00:03    2486.3      0.25       2.0      37.8                           56668.0312
+    0:00:03    2486.3      0.25       2.0      37.8                           56668.0312
+    0:00:03    2487.4      0.20       1.6      36.3                           56704.6953
   Re-synthesis Optimization (Phase 1)
   Re-synthesis Optimization (Phase 2)
   Global Optimization (Phase 1)
@@ -357,7 +380,7 @@ Information: The register 'ram_x_rd_addr_reg[2]' is a constant and will be remov
   Global Optimization (Phase 30)
   Global Optimization (Phase 31)
   Mapping 'layer_4_4_1_16_DW_mult_uns_1'
-    0:00:04    2082.0      0.11       0.7      35.6                           43372.3320
+    0:00:04    2176.9      0.10       0.5      35.5                           45309.4453
 
 
 
@@ -368,30 +391,30 @@ Information: The register 'ram_x_rd_addr_reg[2]' is a constant and will be remov
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:04    2082.0      0.11       0.7      35.6                           43372.3320
-    0:00:04    2082.0      0.11       0.7      35.6                           43372.3320
-    0:00:04    2082.8      0.11       0.7      35.6                           43437.2031
-    0:00:04    2082.8      0.11       0.7      35.6                           43437.2031
-    0:00:04    2099.0      0.08       0.5      35.6                           43956.3555
-    0:00:04    2099.0      0.08       0.5      35.6                           43956.3555
-    0:00:04    2099.0      0.08       0.5      35.6                           43956.3555
-    0:00:04    2099.0      0.08       0.5      35.6                           43956.3555
-    0:00:05    2099.0      0.08       0.5      35.6                           43956.3555
-    0:00:05    2099.0      0.08       0.5      35.6                           43956.3555
-    0:00:05    2161.2      0.03       0.2      35.6                           46039.6094
-    0:00:05    2161.2      0.03       0.2      35.6                           46039.6094
-    0:00:06    2163.9      0.03       0.2      35.6                           46133.4648
+    0:00:04    2176.9      0.10       0.5      35.5                           45309.4453
+    0:00:04    2176.9      0.10       0.5      35.5                           45309.4453
+    0:00:04    2177.2      0.10       0.5      35.5                           45313.5742
+    0:00:04    2177.2      0.10       0.5      35.5                           45313.5742
+    0:00:04    2179.1      0.07       0.4      35.5                           45404.4414
+    0:00:04    2179.1      0.07       0.4      35.5                           45404.4414
+    0:00:04    2179.1      0.07       0.4      35.5                           45404.4414
+    0:00:04    2179.1      0.07       0.4      35.5                           45404.4414
+    0:00:04    2179.1      0.07       0.4      35.5                           45404.4414
+    0:00:04    2179.1      0.07       0.4      35.5                           45404.4414
+    0:00:05    2245.8      0.03       0.2      35.5                           47754.3672
+    0:00:05    2245.8      0.03       0.2      35.5                           47754.3672
+    0:00:05    2245.8      0.03       0.2      35.5                           47754.3672
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:06    2158.3      0.03       0.1      35.6                           45946.8750
-    0:00:06    2172.2      0.01       0.1      35.6                           46474.6992
-    0:00:06    2172.2      0.01       0.1      35.6                           46474.6992
-    0:00:06    2172.2      0.01       0.1      35.6                           46443.8477
-    0:00:06    2169.5      0.01       0.0      35.6                           46372.0781
-    0:00:07    2171.6      0.01       0.0      35.6                           46478.2969
-    0:00:07    2171.6      0.01       0.0      35.6                           46478.2969
-    0:00:07    2171.6      0.01       0.0      35.6                           46478.2969
+    0:00:05    2239.5      0.02       0.1      35.5                           47582.1289
+    0:00:05    2240.5      0.01       0.0      35.5                           47632.2070
+    0:00:05    2240.5      0.01       0.0      35.5                           47632.2070
+    0:00:06    2241.8      0.01       0.0      35.5                           47694.5898
+    0:00:06    2238.9      0.00       0.0      35.5                           47586.8320
+    0:00:06    2248.0      0.00       0.0      35.5                           47899.3672
+    0:00:06    2248.0      0.00       0.0      35.5                           47899.3672
+    0:00:06    2248.0      0.00       0.0      35.5                           47899.3672
 
 
   Beginning Design Rule Fixing  (max_capacitance)
@@ -401,19 +424,19 @@ Information: The register 'ram_x_rd_addr_reg[2]' is a constant and will be remov
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:07    2171.6      0.01       0.0      35.6                           46478.2969
+    0:00:06    2248.0      0.00       0.0      35.5                           47899.3672
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
   Global Optimization (Phase 34)
-    0:00:07    2175.3      0.00       0.0       0.0                           46590.3281
-    0:00:07    2175.3      0.00       0.0       0.0                           46590.3281
+    0:00:06    2250.1      0.00       0.0       0.0                           47984.1680
+    0:00:06    2250.1      0.00       0.0       0.0                           47984.1680
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:07    2175.3      0.00       0.0       0.0                           46590.3281
-    0:00:07    2175.3      0.00       0.0       0.0                           46590.3281
+    0:00:06    2250.1      0.00       0.0       0.0                           47984.1680
+    0:00:06    2249.6      0.00       0.0       0.0                           47969.8125
 
 
   Beginning Leakage Power Optimization  (max_leakage_power 0)
@@ -423,7 +446,7 @@ Information: The register 'ram_x_rd_addr_reg[2]' is a constant and will be remov
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:07    2175.3      0.00       0.0       0.0                           46590.3281
+    0:00:06    2249.0      0.00       0.0       0.0                           47956.4961
   Global Optimization (Phase 35)
   Global Optimization (Phase 36)
   Global Optimization (Phase 37)
@@ -439,41 +462,41 @@ Information: The register 'ram_x_rd_addr_reg[2]' is a constant and will be remov
   Global Optimization (Phase 47)
   Global Optimization (Phase 48)
   Global Optimization (Phase 49)
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:07    2109.9      0.00       0.0       0.0                           44209.4141
+    0:00:06    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:06    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:06    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:08    2109.9      0.00       0.0       0.0                           44209.4141
-    0:00:08    2103.8      0.00       0.0       0.0                           43825.6562
-    0:00:08    2104.6      0.00       0.0       0.0                           43868.7188
-    0:00:08    2104.6      0.00       0.0       0.0                           43868.7188
-    0:00:08    2104.6      0.00       0.0       0.0                           43868.7188
-    0:00:08    2103.0      0.00       0.0       0.0                           43804.0195
-    0:00:08    2103.0      0.00       0.0       0.0                           43804.0195
-    0:00:08    2102.7      0.00       0.0       0.0                           43802.5391
+    0:00:07    2186.3      0.00       0.0       0.0                           45715.9570
+    0:00:07    2183.3      0.01       0.0       0.0                           45509.5117
+    0:00:07    2184.4      0.00       0.0       0.0                           45574.1953
+    0:00:07    2184.4      0.00       0.0       0.0                           45574.1953
+    0:00:07    2184.4      0.00       0.0       0.0                           45574.1953
+    0:00:07    2182.3      0.00       0.0       0.0                           45479.3086
+    0:00:07    2182.3      0.00       0.0       0.0                           45479.3086
+    0:00:07    2181.2      0.00       0.0       0.0                           45438.8164
 Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
 
 
@@ -491,7 +514,7 @@ report_area
 Report : area
 Design : layer_4_4_1_16
 Version: J-2014.09-SP5-2
-Date   : Sun Nov 12 21:59:00 2017
+Date   : Sat Nov 25 16:46:56 2017
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -500,21 +523,21 @@ Library(s) Used:
     NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
 
 Number of ports:                           38
-Number of nets:                          1350
-Number of cells:                         1238
-Number of combinational cells:           1043
-Number of sequential cells:               195
+Number of nets:                          1409
+Number of cells:                         1276
+Number of combinational cells:           1071
+Number of sequential cells:               205
 Number of macros/black boxes:               0
-Number of buf/inv:                        184
-Number of references:                      32
+Number of buf/inv:                        165
+Number of references:                      34
 
-Combinational area:               1220.408001
-Buf/Inv area:                      104.006001
-Noncombinational area:             882.321968
+Combinational area:               1253.658001
+Buf/Inv area:                       92.834001
+Noncombinational area:             927.541966
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                  2102.729969
+Total cell area:                  2181.199968
 Total area:                 undefined
 1
 report_power
@@ -524,7 +547,7 @@ Report : power
         -analysis_effort low
 Design : layer_4_4_1_16
 Version: J-2014.09-SP5-2
-Date   : Sun Nov 12 21:59:00 2017
+Date   : Sat Nov 25 16:46:56 2017
 ****************************************
 
 
@@ -550,12 +573,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =   1.1536 mW   (87%)
-  Net Switching Power  = 179.9125 uW   (13%)
+  Cell Internal Power  =   1.2221 mW   (87%)
+  Net Switching Power  = 180.0329 uW   (13%)
                          ---------
-Total Dynamic Power    =   1.3335 mW  (100%)
+Total Dynamic Power    =   1.4021 mW  (100%)
 
-Cell Leakage Power     =  44.8886 uW
+Cell Leakage Power     =  46.9546 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -565,11 +588,11 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register       1.0520e+03           33.8905        1.5279e+04        1.1011e+03  (  79.88%)
+register       1.1232e+03           33.0144        1.6046e+04        1.1723e+03  (  80.90%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational    101.6499          146.0220        2.9610e+04          277.2814  (  20.12%)
+combinational     98.8539          147.0185        3.0908e+04          276.7806  (  19.10%)
 --------------------------------------------------------------------------------------------------
-Total          1.1536e+03 uW       179.9125 uW     4.4889e+04 nW     1.3784e+03 uW
+Total          1.2221e+03 uW       180.0329 uW     4.6955e+04 nW     1.4490e+03 uW
 1
 report_timing
  
@@ -580,15 +603,15 @@ Report : timing
         -max_paths 1
 Design : layer_4_4_1_16
 Version: J-2014.09-SP5-2
-Date   : Sun Nov 12 21:59:00 2017
+Date   : Sat Nov 25 16:46:56 2017
 ****************************************
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: u_mac/a_int_reg[1]
+  Startpoint: u_mac_0/a_int_reg[9]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: u_mac/d_int_reg[13]
+  Endpoint: u_mac_0/d_int_reg[15]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -601,41 +624,39 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  u_mac/a_int_reg[1]/CK (DFF_X1)           0.00       0.00 r
-  u_mac/a_int_reg[1]/Q (DFF_X1)            0.09       0.09 r
-  U748/ZN (XNOR2_X1)                       0.07       0.17 r
-  U750/ZN (NAND2_X2)                       0.08       0.24 f
-  U785/ZN (OAI22_X1)                       0.07       0.31 r
-  U802/S (FA_X1)                           0.12       0.43 f
-  U613/ZN (OR2_X1)                         0.06       0.49 f
-  U787/ZN (AOI21_X1)                       0.06       0.55 r
-  U805/ZN (OAI21_X1)                       0.04       0.59 f
-  U817/ZN (AOI21_X2)                       0.06       0.65 r
-  U855/ZN (OAI211_X1)                      0.05       0.70 f
-  U873/ZN (NAND2_X1)                       0.04       0.74 r
-  U935/ZN (NAND2_X1)                       0.03       0.77 f
-  U938/ZN (AOI21_X2)                       0.06       0.83 r
-  U1074/ZN (OAI21_X1)                      0.04       0.86 f
-  U1076/ZN (XNOR2_X1)                      0.06       0.92 f
-  U1078/ZN (OAI21_X1)                      0.04       0.96 r
-  u_mac/d_int_reg[13]/D (DFF_X1)           0.01       0.97 r
-  data arrival time                                   0.97
+  u_mac_0/a_int_reg[9]/CK (DFF_X1)         0.00       0.00 r
+  u_mac_0/a_int_reg[9]/QN (DFF_X1)         0.08       0.08 r
+  U594/Z (BUF_X1)                          0.09       0.17 r
+  U883/ZN (XNOR2_X1)                       0.08       0.25 r
+  U884/ZN (OAI22_X1)                       0.05       0.30 f
+  U893/CO (FA_X1)                          0.11       0.41 f
+  U962/S (FA_X1)                           0.15       0.56 r
+  U902/ZN (XNOR2_X1)                       0.07       0.63 r
+  U921/ZN (XNOR2_X1)                       0.07       0.69 r
+  U925/ZN (NOR2_X2)                        0.04       0.73 f
+  U933/ZN (NOR2_X1)                        0.05       0.78 r
+  U976/ZN (NAND2_X1)                       0.03       0.81 f
+  U979/ZN (OAI21_X1)                       0.05       0.86 r
+  U1020/ZN (XNOR2_X1)                      0.06       0.92 r
+  U1022/ZN (OAI21_X1)                      0.03       0.95 f
+  u_mac_0/d_int_reg[15]/D (DFF_X1)         0.01       0.96 f
+  data arrival time                                   0.96
 
   clock clk (rise edge)                    1.00       1.00
   clock network delay (ideal)              0.00       1.00
-  u_mac/d_int_reg[13]/CK (DFF_X1)          0.00       1.00 r
-  library setup time                      -0.03       0.97
-  data required time                                  0.97
+  u_mac_0/d_int_reg[15]/CK (DFF_X1)        0.00       1.00 r
+  library setup time                      -0.04       0.96
+  data required time                                  0.96
   -----------------------------------------------------------
-  data required time                                  0.97
-  data arrival time                                  -0.97
+  data required time                                  0.96
+  data arrival time                                  -0.96
   -----------------------------------------------------------
   slack (MET)                                         0.00
 
 
 1
 write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
-Writing verilog file '/home/home5/aahangar/proj3/part1/gates.v'.
+Writing verilog file '/home/home5/aahangar/proj3/part2/gates.v'.
 Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
 1
 quit

@@ -1,0 +1,106 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+         Version J-2014.09-SP5-2 for RHEL64 -- Jul 11, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+##############################################
+# Setup: fill out the following parameters: name of clock signal, clock period (ns),
+# reset signal name (if used), name of top-level module, name of source file
+set CLK_NAME "clk";
+clk
+set CLK_PERIOD 1.00;
+1.00
+set RST_NAME "reset";
+reset
+set TOP_MOD_NAME "layer_5_2_5_9";
+layer_5_2_5_9
+set SRC_FILE "layer_5_2_1_9.sv";
+layer_5_2_1_9.sv
+###############################################
+source setupdc.tcl
+NangateOpenCellLibrary_typical.db dw_foundation.sldb
+file mkdir work_synth
+define_design_lib WORK -path work_synth
+1
+analyze $SRC_FILE -format sverilog
+Running PRESTO HDLC
+Searching for ./layer_5_2_1_9.sv
+Compiling source file ./layer_5_2_1_9.sv
+Presto compilation completed successfully.
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/dw_foundation.sldb'
+1
+elaborate -work WORK $TOP_MOD_NAME
+Loading db file '/usr/local/synopsys/syn/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Error: Cannot find the design 'layer_5_2_5_9' in the library 'WORK'. (LBR-0)
+0
+###### CLOCKS AND PORTS #######
+set CLK_PORT [get_ports $CLK_NAME]
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'clk'. (UID-109)
+set TMP1 [remove_from_collection [all_inputs] $CLK_PORT]
+Error: Current design is not defined. (UID-4)
+set INPUTS [remove_from_collection $TMP1 $RST_NAME]
+create_clock -period $CLK_PERIOD [get_ports clk]
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'clk'. (UID-109)
+Error: Value for list 'source_objects' must have 1 elements. (CMD-036)
+0
+# set delay for inputs to be 0.2ns
+set_input_delay 0.2 -max -clock clk $INPUTS
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+set_output_delay 0.2 -max -clock clk [all_outputs]
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+###### OPTIMIZATION #######
+set_max_area 0 
+Error: Current design is not defined. (UID-4)
+0
+###### RUN #####
+compile_ultra
+Error: Current design is not defined. (UID-4)
+0
+report_area
+Error: Current design is not defined. (UID-4)
+0
+report_power
+Error: Current design is not defined. (UID-4)
+0
+report_timing
+Error: Current design is not defined. (UID-4)
+0
+write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
+Error: No files or designs were specified. (UID-22)
+0
+quit
+
+Thank you...
