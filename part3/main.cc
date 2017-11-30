@@ -9,6 +9,7 @@
 //
 // For Part 3, your code should be in the genAllLayers() function.
 
+#define MAX(x, y) (x > y) ? x : y
 
 #include <iostream>
 #include <fstream>
@@ -17,6 +18,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <assert.h>
+#include <algorithm>
 #include <math.h>
 using namespace std;
 
@@ -510,6 +512,21 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
 
 }
 
+int mult_required(int lsize, int lparam) {
+   int mult_req = 1;
+
+   if(lsize % 2 != 0) {
+      mult_req = lsize-1;
+   }
+   else {
+      while(lsize % (mult_req+lparam) != 0) {
+        mult_req++;
+      }
+   }
+
+   return mult_req;
+}
+
 // Part 3: Generate a hardware system with three layers interconnected.
 // Layer 1: Input length: N, output length: M1
 // Layer 2: Input length: M1, output length: M2
@@ -521,16 +538,61 @@ void genAllLayers(int N, int M1, int M2, int M3, int mult_budget, int bits, vect
 
    // Here you will write code to figure out the best values to use for P1, P2, and P3, given
    // mult_budget.
-   int P1 = 1; // replace this with your optimized value
-   int P2 = 1; // replace this with your optimized value
-   int P3 = 1; // replace this with your optimized value
 
-   // output top-level module
-   // set your top-level name to "network_top"
+   int layer_params[3] = {1, 1, 1};
+   int layer_size[3] = {M1, M2, M3};
+   int layer_done[3] = {0, 0, 0};
+   int orig_cost[3] = {N*M1, M1*M2, M2*M3};
+
+   vector<int> layer_cost;
+
+   //Initial cost of each layer.
+   layer_cost.push_back( N*M1);
+   layer_cost.push_back(M1*M2);
+   layer_cost.push_back(M2*M3);
+
+   //Assuming all three layer working on continous data, the throughput of the
+   //whole pipeline will be limited by the layer with most multiplication. We
+   //tread that as the cost of whole system. I use a greedy algorithm which assign
+   //available multiplier to the layer which decreases the cose of the pipeline most.
+
+   int budget = mult_budget - 3; //3 multipliers are the minimum we need.
+
+   while(budget) {
+     auto max_cost = *std::max_element(layer_cost.begin(), layer_cost.end());
+     auto it = std::find(layer_cost.begin(), layer_cost.end(), max_cost);
+     auto idx = distance(layer_cost.begin(), it);
+
+     //cout << "Budget: " << budget << " Idx: " << idx << endl;
+
+     int mult_req = mult_required(layer_size[idx], layer_params[idx]);
+
+     if(budget >= mult_req && mult_req != 0) {
+        budget -= mult_req;
+        layer_params[idx] += mult_req;
+        layer_cost[idx] = orig_cost[idx] / layer_params[idx];
+        if(layer_params[idx] == layer_size[idx]) {
+          layer_cost[idx] = 0;
+          layer_done[idx] = 1;
+        }
+     }
+     else {
+        layer_cost[idx] = 0;
+        layer_done[idx] = 1;
+     }
+
+     if(layer_done[0] && layer_done[1] && layer_done[2]) break;
+     //cout << "Mult Req: " << mult_req << " P: " << layer_params[idx] << endl;
+
+   }
+
+   int P1 = layer_params[0];
+   int P2 = layer_params[1];
+   int P3 = layer_params[2];
 
    //Generating File Header
    os << "// ------------------------------------------//" << endl;
-   os << "// Neural Network Layer Generator - Part 1     " << endl;
+   os << "// Neural Network -- Part 3                    " << endl;
    os << "// ------------------------------------------//" << endl;
    os << "// NAME:  Atif Iqbal                           " << endl;
    os << "// NETID: aahangar                             " << endl;
