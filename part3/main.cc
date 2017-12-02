@@ -187,16 +187,6 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
    // Make your module name: layer_M_N_P_bits, where these parameters are replaced with the
    // actual numbers
 
-   //Generating File Header
-   os << "// ------------------------------------------//" << endl;
-   os << "// Neural Network Layer Generator - Part 1     " << endl;
-   os << "// ------------------------------------------//" << endl;
-   os << "// NAME:  Atif Iqbal                           " << endl;
-   os << "// NETID: aahangar                             " << endl;
-   os << "// SBUID: 111416569                            " << endl;
-   os << "// ------------------------------------------//" << endl;
-   os << endl << endl;
-
    //Generating Module Header
    os << "module " << modName << " #(" << endl;
    os << "   parameter M = " << M << "," << endl;
@@ -510,6 +500,8 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
       genROM(bVector, bits, romModName, os);
    }
 
+   os << endl;
+
 }
 
 int mult_required(int lsize, int lparam) {
@@ -713,6 +705,8 @@ void genAllLayers(int N, int M1, int M2, int M3, int mult_budget, int bits, vect
 
    subModName = "layer3_" + to_string(M3) + "_" + to_string(M2) + "_" + to_string(P3) + "_" + to_string(bits);
    genLayer(M3, M2, P3, bits, constVector3, subModName, os);
+
+   os << endl;
 
    // You will need to add code in the module at the top of this function to stitch together insantiations of these three modules
 
