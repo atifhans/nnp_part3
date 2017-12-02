@@ -2,10 +2,10 @@
 # Setup: fill out the following parameters: name of clock signal, clock period (ns),
 # reset signal name (if used), name of top-level module, name of source file
 set CLK_NAME "clk";
-set CLK_PERIOD 1.10;
+set CLK_PERIOD {CLK};
 set RST_NAME "reset";
-set TOP_MOD_NAME "layer_16_12_8_20";
-set SRC_FILE "layer_16_12_8_20.sv";
+set TOP_MOD_NAME "layer_{ARG0}_{ARG1}_{ARG2}_{ARG3}";
+set SRC_FILE "layer_{ARG0}_{ARG1}_{ARG2}_{ARG3}.sv";
 ###############################################
 
 source setupdc.tcl
@@ -35,4 +35,3 @@ report_timing
 write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
 
 quit
-
