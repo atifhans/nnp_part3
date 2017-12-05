@@ -123,7 +123,7 @@ Information: Building the design 'memory' instantiated from design 'layer_8_6_1_
 	the parameters "WIDTH=16,SIZE=6,LOGSIZE=3". (HDL-193)
 
 Inferred memory devices in process
-	in routine memory_WIDTH16_SIZE6_LOGSIZE3 line 428 in file
+	in routine memory_WIDTH16_SIZE6_LOGSIZE3 line 418 in file
 		'./layer_8_6_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -138,37 +138,42 @@ Inferred memory devices in process
 ===============================================================================
 Presto compilation completed successfully.
 Information: Building the design 'layer_8_6_1_16_W_rom'. (HDL-193)
-Warning:  ./layer_8_6_1_16.sv:208: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:203: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:204: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:205: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:206: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:207: unsigned to signed assignment occurs. (VER-318)
 Warning:  ./layer_8_6_1_16.sv:209: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:210: unsigned to signed assignment occurs. (VER-318)
 Warning:  ./layer_8_6_1_16.sv:211: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:213: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:214: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:215: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:212: unsigned to signed assignment occurs. (VER-318)
 Warning:  ./layer_8_6_1_16.sv:218: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:220: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:223: unsigned to signed assignment occurs. (VER-318)
 Warning:  ./layer_8_6_1_16.sv:224: unsigned to signed assignment occurs. (VER-318)
 Warning:  ./layer_8_6_1_16.sv:225: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:227: unsigned to signed assignment occurs. (VER-318)
 Warning:  ./layer_8_6_1_16.sv:228: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:233: unsigned to signed assignment occurs. (VER-318)
 Warning:  ./layer_8_6_1_16.sv:234: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:235: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:238: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:236: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:239: unsigned to signed assignment occurs. (VER-318)
 Warning:  ./layer_8_6_1_16.sv:241: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:242: unsigned to signed assignment occurs. (VER-318)
 Warning:  ./layer_8_6_1_16.sv:244: unsigned to signed assignment occurs. (VER-318)
 Warning:  ./layer_8_6_1_16.sv:245: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:246: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:252: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:253: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:247: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:249: unsigned to signed assignment occurs. (VER-318)
 
-Statistics for case statements in always block at line 205 in file
+Statistics for case statements in always block at line 200 in file
 	'./layer_8_6_1_16.sv'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           206            |     no/auto      |
+|           201            |     no/auto      |
 ===============================================
 
 Inferred memory devices in process
-	in routine layer_8_6_1_16_W_rom line 205 in file
+	in routine layer_8_6_1_16_W_rom line 200 in file
 		'./layer_8_6_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -177,22 +182,21 @@ Inferred memory devices in process
 ===============================================================================
 Presto compilation completed successfully.
 Information: Building the design 'layer_8_6_1_16_B_rom'. (HDL-193)
-Warning:  ./layer_8_6_1_16.sv:266: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:260: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:261: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:265: unsigned to signed assignment occurs. (VER-318)
 Warning:  ./layer_8_6_1_16.sv:267: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:269: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:270: unsigned to signed assignment occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:272: unsigned to signed assignment occurs. (VER-318)
 
-Statistics for case statements in always block at line 263 in file
+Statistics for case statements in always block at line 258 in file
 	'./layer_8_6_1_16.sv'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           264            |    auto/auto     |
+|           259            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine layer_8_6_1_16_B_rom line 263 in file
+	in routine layer_8_6_1_16_B_rom line 258 in file
 		'./layer_8_6_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -202,12 +206,12 @@ Inferred memory devices in process
 Presto compilation completed successfully.
 Information: Building the design 'part3_mac' instantiated from design 'layer_8_6_1_16' with
 	the parameters "T=16,NUM_S=1,VEC_S=6". (HDL-193)
-Warning:  ./layer_8_6_1_16.sv:398: signed to unsigned conversion occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:399: signed to unsigned conversion occurs. (VER-318)
-Warning:  ./layer_8_6_1_16.sv:318: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:389: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:390: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_8_6_1_16.sv:309: signed to unsigned conversion occurs. (VER-318)
 
 Inferred memory devices in process
-	in routine part3_mac_T16_NUM_S1_VEC_S6 line 353 in file
+	in routine part3_mac_T16_NUM_S1_VEC_S6 line 344 in file
 		'./layer_8_6_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -219,7 +223,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine part3_mac_T16_NUM_S1_VEC_S6 line 374 in file
+	in routine part3_mac_T16_NUM_S1_VEC_S6 line 365 in file
 		'./layer_8_6_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -229,7 +233,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine part3_mac_T16_NUM_S1_VEC_S6 line 390 in file
+	in routine part3_mac_T16_NUM_S1_VEC_S6 line 381 in file
 		'./layer_8_6_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -240,7 +244,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine part3_mac_T16_NUM_S1_VEC_S6 line 408 in file
+	in routine part3_mac_T16_NUM_S1_VEC_S6 line 399 in file
 		'./layer_8_6_1_16.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -327,10 +331,10 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:04    2843.5      0.20       1.8       2.7                           65312.9258
-    0:00:04    2843.5      0.20       1.8       2.7                           65312.9258
-    0:00:04    2843.5      0.20       1.8       2.7                           65312.9258
-    0:00:04    2839.5      0.20       1.8       2.7                           65134.5078
+    0:00:03    2848.1      0.20       2.4      20.1                           65421.3438
+    0:00:03    2848.1      0.20       2.4      20.1                           65421.3438
+    0:00:03    2848.1      0.20       2.4      20.1                           65421.3438
+    0:00:03    2844.1      0.20       2.4      20.1                           65242.9258
   Re-synthesis Optimization (Phase 1)
   Re-synthesis Optimization (Phase 2)
   Global Optimization (Phase 1)
@@ -363,8 +367,9 @@ Information: Updating design information... (UID-85)
   Global Optimization (Phase 28)
   Global Optimization (Phase 29)
   Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
   Mapping 'layer_8_6_1_16_DW_mult_uns_1'
-    0:00:05    2508.9      0.10       0.7      36.6                           52620.1914
+    0:00:04    2512.9      0.10       0.7      45.0                           52681.5508
 
 
 
@@ -375,30 +380,30 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:05    2508.9      0.10       0.7      36.6                           52620.1914
-    0:00:05    2508.9      0.10       0.7      36.6                           52620.1914
-    0:00:05    2508.9      0.10       0.7      36.6                           52620.1914
-    0:00:05    2508.9      0.10       0.7      36.6                           52620.1914
-    0:00:05    2561.3      0.08       0.5      40.0                           54264.7930
-    0:00:05    2561.3      0.08       0.5      40.0                           54264.7930
-    0:00:05    2561.3      0.08       0.5      40.0                           54264.7930
-    0:00:05    2561.3      0.08       0.5      40.0                           54264.7930
-    0:00:06    2561.3      0.08       0.5      40.0                           54264.7930
-    0:00:06    2561.3      0.08       0.5      40.0                           54264.7930
-    0:00:06    2605.2      0.05       0.3      40.0                           55757.5352
-    0:00:06    2605.2      0.05       0.3      40.0                           55757.5352
-    0:00:06    2616.1      0.04       0.2      40.0                           56106.1836
+    0:00:04    2512.9      0.10       0.7      45.0                           52681.5508
+    0:00:04    2512.9      0.10       0.7      45.0                           52681.5508
+    0:00:04    2512.9      0.10       0.7      45.0                           52681.5508
+    0:00:04    2512.9      0.10       0.7      45.0                           52681.5508
+    0:00:05    2565.3      0.08       0.5      48.4                           54326.1484
+    0:00:05    2565.3      0.08       0.5      48.4                           54326.1484
+    0:00:05    2565.3      0.08       0.5      48.4                           54326.1484
+    0:00:05    2565.3      0.08       0.5      48.4                           54326.1484
+    0:00:05    2565.3      0.08       0.5      48.4                           54326.1484
+    0:00:05    2565.3      0.08       0.5      48.4                           54326.1484
+    0:00:05    2609.2      0.05       0.3      48.4                           55818.8906
+    0:00:05    2609.2      0.05       0.3      48.4                           55818.8906
+    0:00:06    2620.1      0.04       0.2      48.4                           56167.5391
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:06    2614.5      0.03       0.2      40.0                           56063.1250
-    0:00:07    2631.5      0.02       0.1      40.0                           56633.6445
-    0:00:07    2631.5      0.02       0.1      40.0                           56633.6445
-    0:00:07    2631.5      0.02       0.1      40.0                           56633.6445
-    0:00:07    2629.4      0.02       0.1      40.0                           56554.5938
-    0:00:07    2629.4      0.02       0.1      40.0                           56554.5938
-    0:00:07    2629.4      0.02       0.1      40.0                           56554.5938
-    0:00:07    2629.9      0.02       0.1      40.0                           56566.8398
+    0:00:06    2618.5      0.03       0.2      48.4                           56124.4805
+    0:00:06    2635.5      0.02       0.1      48.4                           56695.0039
+    0:00:06    2635.5      0.02       0.1      48.4                           56695.0039
+    0:00:07    2635.5      0.02       0.1      48.4                           56695.0039
+    0:00:07    2633.4      0.02       0.1      48.4                           56615.9531
+    0:00:07    2633.4      0.02       0.1      48.4                           56615.9531
+    0:00:07    2633.4      0.02       0.1      48.4                           56615.9531
+    0:00:07    2633.9      0.02       0.1      48.4                           56628.1953
 
 
   Beginning Design Rule Fixing  (max_capacitance)
@@ -408,19 +413,19 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:07    2629.9      0.02       0.1      40.0                           56566.8398
-  Global Optimization (Phase 31)
+    0:00:07    2633.9      0.02       0.1      48.4                           56628.1953
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
-    0:00:08    2632.6      0.00       0.0       0.0                           56596.3867
-    0:00:08    2632.6      0.00       0.0       0.0                           56596.3867
+  Global Optimization (Phase 34)
+    0:00:07    2638.7      0.00       0.0       0.0                           56712.0156
+    0:00:07    2638.7      0.00       0.0       0.0                           56712.0156
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:08    2632.6      0.00       0.0       0.0                           56596.3867
-    0:00:08    2630.7      0.00       0.0       0.0                           56538.9727
+    0:00:07    2638.7      0.00       0.0       0.0                           56712.0156
+    0:00:07    2636.9      0.00       0.0       0.0                           56654.6016
 
 
   Beginning Leakage Power Optimization  (max_leakage_power 0)
@@ -430,8 +435,7 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:08    2628.9      0.00       0.0       0.0                           56488.7812
-  Global Optimization (Phase 34)
+    0:00:08    2634.7      0.00       0.0       0.0                           56604.3906
   Global Optimization (Phase 35)
   Global Optimization (Phase 36)
   Global Optimization (Phase 37)
@@ -446,41 +450,42 @@ Information: Updating design information... (UID-85)
   Global Optimization (Phase 46)
   Global Optimization (Phase 47)
   Global Optimization (Phase 48)
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
+  Global Optimization (Phase 49)
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:08    2557.3      0.00       0.0       0.0                           53861.8203
-    0:00:09    2552.3      0.00       0.0       0.0                           53630.5039
-    0:00:09    2552.3      0.00       0.0       0.0                           53630.5039
-    0:00:09    2552.3      0.00       0.0       0.0                           53630.5039
-    0:00:09    2552.3      0.00       0.0       0.0                           53630.5039
-    0:00:09    2545.1      0.00       0.0       0.0                           53420.1445
-    0:00:09    2545.1      0.00       0.0       0.0                           53420.1445
-    0:00:09    2544.0      0.00       0.0       0.0                           53366.7734
+    0:00:08    2561.3      0.00       0.0       0.0                           53892.8047
+    0:00:08    2556.3      0.00       0.0       0.0                           53681.1914
+    0:00:08    2556.3      0.00       0.0       0.0                           53681.1914
+    0:00:08    2556.3      0.00       0.0       0.0                           53681.1914
+    0:00:08    2556.3      0.00       0.0       0.0                           53681.1914
+    0:00:08    2548.3      0.00       0.0       0.0                           53459.6172
+    0:00:08    2548.3      0.00       0.0       0.0                           53459.6172
+    0:00:08    2547.5      0.00       0.0       0.0                           53427.8711
 Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
 
 
@@ -498,7 +503,7 @@ report_area
 Report : area
 Design : layer_8_6_1_16
 Version: J-2014.09-SP5-2
-Date   : Sat Dec  2 02:26:29 2017
+Date   : Tue Dec  5 03:45:26 2017
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -507,21 +512,21 @@ Library(s) Used:
     NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
 
 Number of ports:                           38
-Number of nets:                          1656
+Number of nets:                          1655
 Number of cells:                         1539
 Number of combinational cells:           1302
 Number of sequential cells:               237
 Number of macros/black boxes:               0
-Number of buf/inv:                        274
-Number of references:                      36
+Number of buf/inv:                        275
+Number of references:                      37
 
-Combinational area:               1471.778006
-Buf/Inv area:                      150.290001
+Combinational area:               1475.236007
+Buf/Inv area:                      151.088001
 Noncombinational area:            1072.245961
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                  2544.023967
+Total cell area:                  2547.481968
 Total area:                 undefined
 1
 report_power
@@ -531,7 +536,7 @@ Report : power
         -analysis_effort low
 Design : layer_8_6_1_16
 Version: J-2014.09-SP5-2
-Date   : Sat Dec  2 02:26:29 2017
+Date   : Tue Dec  5 03:45:26 2017
 ****************************************
 
 
@@ -557,12 +562,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =   1.3534 mW   (88%)
-  Net Switching Power  = 181.9545 uW   (12%)
+  Cell Internal Power  =   1.3365 mW   (88%)
+  Net Switching Power  = 175.0989 uW   (12%)
                          ---------
-Total Dynamic Power    =   1.5353 mW  (100%)
+Total Dynamic Power    =   1.5116 mW  (100%)
 
-Cell Leakage Power     =  54.1154 uW
+Cell Leakage Power     =  54.1950 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -572,11 +577,11 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register       1.2558e+03           34.8620        1.8554e+04        1.3092e+03  (  82.37%)
+register       1.2410e+03           33.4768        1.8567e+04        1.2930e+03  (  82.58%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational     97.5910          147.0924        3.5562e+04          280.2447  (  17.63%)
+combinational     95.5470          141.6219        3.5628e+04          272.7974  (  17.42%)
 --------------------------------------------------------------------------------------------------
-Total          1.3534e+03 uW       181.9544 uW     5.4115e+04 nW     1.5895e+03 uW
+Total          1.3365e+03 uW       175.0988 uW     5.4195e+04 nW     1.5658e+03 uW
 1
 report_timing
  
@@ -587,7 +592,7 @@ Report : timing
         -max_paths 1
 Design : layer_8_6_1_16
 Version: J-2014.09-SP5-2
-Date   : Sat Dec  2 02:26:29 2017
+Date   : Tue Dec  5 03:45:26 2017
 ****************************************
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
@@ -610,19 +615,19 @@ Wire Load Model Mode: top
   clock network delay (ideal)              0.00       0.00
   u_mac/a_int_reg[7]/CK (DFF_X1)           0.00       0.00 r
   u_mac/a_int_reg[7]/Q (DFF_X1)            0.10       0.10 r
-  U945/Z (BUF_X1)                          0.10       0.19 r
-  U979/ZN (XNOR2_X1)                       0.08       0.27 r
-  U980/ZN (OAI22_X1)                       0.05       0.32 f
-  U999/CO (FA_X1)                          0.11       0.43 f
-  U1017/CO (FA_X1)                         0.11       0.54 f
-  U1033/ZN (XNOR2_X1)                      0.06       0.60 f
-  U1045/ZN (XNOR2_X1)                      0.06       0.67 f
-  U1046/ZN (NOR2_X2)                       0.06       0.72 r
-  U1050/ZN (OAI21_X1)                      0.04       0.76 f
-  U857/ZN (AOI21_X1)                       0.07       0.83 r
-  U1119/ZN (OAI21_X1)                      0.04       0.86 f
-  U1149/ZN (XNOR2_X1)                      0.06       0.92 f
-  U1154/ZN (OAI21_X1)                      0.04       0.96 r
+  U940/Z (BUF_X1)                          0.10       0.19 r
+  U974/ZN (XNOR2_X1)                       0.08       0.27 r
+  U975/ZN (OAI22_X1)                       0.05       0.32 f
+  U994/CO (FA_X1)                          0.11       0.43 f
+  U1012/CO (FA_X1)                         0.11       0.54 f
+  U1028/ZN (XNOR2_X1)                      0.06       0.60 f
+  U1040/ZN (XNOR2_X1)                      0.06       0.67 f
+  U1041/ZN (NOR2_X2)                       0.06       0.72 r
+  U1045/ZN (OAI21_X1)                      0.04       0.76 f
+  U851/ZN (AOI21_X1)                       0.07       0.83 r
+  U1114/ZN (OAI21_X1)                      0.04       0.86 f
+  U1144/ZN (XNOR2_X1)                      0.06       0.92 f
+  U1149/ZN (OAI21_X1)                      0.04       0.96 r
   u_mac/d_int_reg[14]/D (DFF_X1)           0.01       0.97 r
   data arrival time                                   0.97
 

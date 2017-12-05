@@ -3,7 +3,7 @@
 // Peter Milder
 
 // Getting started:
-// The main() function contains the code to read the parameters. 
+// The main() function contains the code to read the parameters.
 // For Parts 1 and 2, your code should be in the genLayer() function. Please
 // also look at this function to see an example for how to create the ROMs.
 //
@@ -72,7 +72,7 @@ int main(int argc, char* argv[]) {
 
       // call the genLayer function you will write to generate this layer
       string modName = "layer_" + to_string(M) + "_" + to_string(N) + "_" + to_string(P) + "_" + to_string(bits);
-      genLayer(M, N, P, bits, constVector, modName, os); 
+      genLayer(M, N, P, bits, constVector, modName, os);
 
    }
    //--------------------------------------------------------------------
@@ -123,18 +123,18 @@ int main(int argc, char* argv[]) {
    // close the output stream
    os.close();
 
-   int M = atoi(argv[2]);
-   int N = atoi(argv[3]);
-   int P = atoi(argv[4]);
-   int bits = atoi(argv[5]);
+   //int M = atoi(argv[2]);
+   //int N = atoi(argv[3]);
+   //int P = atoi(argv[4]);
+   //int bits = atoi(argv[5]);
 
-   string out_file = "layer_" + to_string(M) + "_" + to_string(N) + "_" + to_string(P) + "_" + to_string(bits) + ".sv";
+   //string out_file = "layer_" + to_string(M) + "_" + to_string(N) + "_" + to_string(P) + "_" + to_string(bits) + ".sv";
 
-   string append_mac_cmd = "cat mac.sv >> " + out_file;
-   string append_mem_cmd = "cat memory.sv >> " + out_file;
+   //string append_mac_cmd = "cat mac.sv >> " + out_file;
+   //string append_mem_cmd = "cat memory.sv >> " + out_file;
 
-   system(append_mac_cmd.c_str());
-   system(append_mem_cmd.c_str());
+   //ystem(append_mac_cmd.c_str());
+   //system(append_mem_cmd.c_str());
 
 }
 
@@ -185,14 +185,14 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
    os << "// NETID: aahangar                             " << endl;
    os << "// SBUID: 111416569                            " << endl;
    os << "// ------------------------------------------//" << endl;
-   os << endl << endl; 
-   
+   os << endl << endl;
+
    //Generating Module Header
    os << "module " << modName << " #(" << endl;
-   os << "   parameter M = " << M << "," << endl;  //TOOD: implicit conversion. Use to_string 
-   os << "   parameter N = " << N << "," << endl;   
-   os << "   parameter P = " << P << "," << endl;   
-   os << "   parameter T = " << bits << ")" << endl;   
+   os << "   parameter M = " << M << "," << endl;  //TOOD: implicit conversion. Use to_string
+   os << "   parameter N = " << N << "," << endl;
+   os << "   parameter P = " << P << "," << endl;
+   os << "   parameter T = " << bits << ")" << endl;
    os << "(" << endl;
    os << "   input  logic                   clk," << endl;
    os << "   input  logic                   reset," << endl;
@@ -241,7 +241,7 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
    os << "   assign data_out = (mac_data_out < $signed(0)) ? 0 : mac_data_out;" << endl;
    //os << "   assign mac_valid_in = next_req && (state == COMPUTE_y);" << endl;
    os << endl;
-   
+
    //Generating instantiations.
    //Vec x memory
    os << "   memory #(" << endl;
@@ -416,11 +416,165 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
    vector<int> wVector(&constVector[0], &constVector[M*N]);
    genROM(wVector, bits, romModName, os);
 
-   // Generate a ROM (for B) with constants M*N through M*N+M-1 wits "bits" number of bits 
+   // Generate a ROM (for B) with constants M*N through M*N+M-1 wits "bits" number of bits
    romModName = modName + "_B_rom";
    vector<int> bVector(&constVector[M*N], &constVector[M*N+M]);
 
    genROM(bVector, bits, romModName, os);
+
+   os << "module part3_mac #(parameter T = 8," << endl;
+   os << "                   parameter NUM_S =  2," << endl;
+   os << "                   parameter VEC_S =  3)" << endl;
+   os << "(" << endl;
+   os << "    input  logic                clk, " << endl;
+   os << "    input  logic                reset," << endl;
+   os << "    input  logic signed [T-1:0] a, " << endl;
+   os << "    input  logic signed [T-1:0] b,  " << endl;
+   os << "    input  logic        [T-1:0] x,  " << endl;
+   os << "    input  logic                valid_in," << endl;
+   os << "    output logic signed [T-1:0] f, " << endl;
+   os << "    output logic                valid_out," << endl;
+   os << "    output logic                overflow" << endl;
+   os << ");" << endl;
+   os << "" << endl;
+   os << "    localparam VCNT_LSIZE  = $clog2(VEC_S+1);" << endl;
+   os << "" << endl;
+   os << "    logic signed [T-1:0]    a_int;" << endl;
+   os << "    logic signed [T-1:0]    b_int;" << endl;
+   os << "    logic        [T-1:0]    x_int;" << endl;
+   os << "    logic signed [T-1:0]    c_int;" << endl;
+   os << "    logic signed [T-1:0]    d_int;" << endl;
+   os << "    logic signed [T-1:0]    e_int;" << endl;
+   os << "    logic                   overflow_int;" << endl;
+   os << "    logic                   enable_d;" << endl;
+   os << "    logic                   enable_f;" << endl;
+   os << "    logic [NUM_S-1:0]       enable_m;" << endl;
+   os << "    logic [VCNT_LSIZE-1:0]  vec_cnt;" << endl;
+   os << "" << endl;
+   os << "    assign e_int = f + d_int;" << endl;
+   os << "" << endl;
+   os << "    //Simple overflow detection logic" << endl;
+   os << "    assign overflow_int = ( f[T-1] &  d_int[T-1] & !e_int[T-1]) |" << endl;
+   os << "                          (!f[T-1] & !d_int[T-1] &  e_int[T-1]);" << endl;
+   os << "" << endl;
+   os << "    generate" << endl;
+   os << "        if (NUM_S == 1) begin" << endl;
+   os << "            assign c_int = (a_int * x_int);" << endl;
+   os << "            assign enable_m[0] = enable_d;" << endl;
+   os << "        end" << endl;
+   os << "        else begin " << endl;
+   os << "            if (NUM_S == 2) begin" << endl;
+   os << "                DW02_mult_2_stage #(8, 8) multinstance(a_int, x_int, 1'b1, clk, c_int);" << endl;
+   os << "            end" << endl;
+   os << "            else if(NUM_S == 3) begin" << endl;
+   os << "                DW02_mult_3_stage #(8, 8) multinstance(a_int, x_int, 1'b1, clk, c_int);" << endl;
+   os << "            end" << endl;
+   os << "            else if(NUM_S == 4) begin" << endl;
+   os << "                DW02_mult_4_stage #(8, 8) multinstance(a_int, x_int, 1'b1, clk, c_int);" << endl;
+   os << "            end" << endl;
+   os << "            else if(NUM_S == 5) begin" << endl;
+   os << "                DW02_mult_5_stage #(8, 8) multinstance(a_int, x_int, 1'b1, clk, c_int);" << endl;
+   os << "            end" << endl;
+   os << "            else if(NUM_S == 6) begin" << endl;
+   os << "                DW02_mult_6_stage #(8, 8) multinstance(a_int, x_int, 1'b1, clk, c_int);" << endl;
+   os << "            end" << endl;
+   os << "" << endl;
+   os << "            always_ff @(posedge clk)" << endl;
+   os << "                if (reset) begin" << endl;
+   os << "                    enable_m <= 'd0;" << endl;
+   os << "                end" << endl;
+   os << "                else begin" << endl;
+   os << "                    enable_m[NUM_S-2] <= enable_d;" << endl;
+   os << "                    for(int i = 0; i < NUM_S-2; i++)" << endl;
+   os << "                        enable_m[i] <= enable_m[i+1];" << endl;
+   os << "                end" << endl;
+   os << "        end" << endl;
+   os << "    endgenerate" << endl;
+   os << "" << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    // Flopping the a, b and valid_in input." << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    always_ff @(posedge clk)" << endl;
+   os << "        if (reset) begin" << endl;
+   os << "            a_int    <=  'd0;" << endl;
+   os << "            b_int    <=  'd0;" << endl;
+   os << "            x_int    <=  'd0;" << endl;
+   os << "            enable_d <= 1'b0;" << endl;
+   os << "        end" << endl;
+   os << "        else if (valid_in) begin" << endl;
+   os << "            a_int    <= a;" << endl;
+   os << "            b_int    <= b;" << endl;
+   os << "            x_int    <= x;" << endl;
+   os << "            enable_d <= 1'b1;" << endl;
+   os << "        end" << endl;
+   os << "        else begin" << endl;
+   os << "            enable_d <= 1'b0;" << endl;
+   os << "        end" << endl;
+   os << "" << endl;
+   os << "" << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    // Pipeline reg between multiplier and adder." << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    always_ff @(posedge clk)" << endl;
+   os << "        if (reset) begin" << endl;
+   os << "            d_int    <=  'd0;" << endl;
+   os << "            enable_f <= 1'b0;" << endl;
+   os << "        end" << endl;
+   os << "        else if (enable_m[0]) begin" << endl;
+   os << "            d_int    <= c_int; " << endl;
+   os << "            enable_f <= 1'b1;" << endl;
+   os << "        end" << endl;
+   os << "        else begin" << endl;
+   os << "            enable_f <= 1'b0;" << endl;
+   os << "        end" << endl;
+   os << "" << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    // Doing MAC operation." << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    always_ff @(posedge clk)" << endl;
+   os << "        if (reset) begin" << endl;
+   os << "            f         <=   'd0;" << endl;
+   os << "            valid_out <=  1'b0; " << endl;
+   os << "            vec_cnt   <=   'd0;" << endl;
+   os << "        end" << endl;
+   os << "        else if (enable_f) begin" << endl;
+   os << "            f         <= (vec_cnt ==    2'd0) ? d_int + b_int : f + d_int;" << endl;
+   os << "            vec_cnt   <= (vec_cnt == VEC_S-1) ? 0 : vec_cnt + 1'b1;" << endl;
+   os << "            valid_out <= (vec_cnt == VEC_S-1) ? 1'b1 : 1'b0;" << endl;
+   os << "        end" << endl;
+   os << "        else begin" << endl;
+   os << "            valid_out <= 1'b0;" << endl;
+   os << "        end" << endl;
+   os << "" << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    // Overflow detection." << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    always_ff @(posedge clk)" << endl;
+   os << "        if (reset)" << endl;
+   os << "            overflow <= 1'b0; " << endl;
+   os << "        else if (vec_cnt == 0)" << endl;
+   os << "            overflow <= 1'b0;" << endl;
+   os << "        else if (overflow_int & enable_f)" << endl;
+   os << "            overflow <= 1'b1;" << endl;
+   os << "" << endl;
+   os << "endmodule" << endl;
+
+   os << "module memory(clk, data_in, data_out, addr, wr_en);" << endl;
+   os << "   " << endl;
+   os << "   parameter WIDTH=16, SIZE=64, LOGSIZE=6;" << endl;
+   os << "   input [WIDTH-1:0] data_in;" << endl;
+   os << "   output logic [WIDTH-1:0] data_out;" << endl;
+   os << "   input [LOGSIZE-1:0]      addr;" << endl;
+   os << "   input                    clk, wr_en;" << endl;
+   os << "   " << endl;
+   os << "   logic [SIZE-1:0][WIDTH-1:0] mem;" << endl;
+   os << "   " << endl;
+   os << "   always_ff @(posedge clk) begin" << endl;
+   os << "      data_out <= mem[addr];" << endl;
+   os << "	  if (wr_en)" << endl;
+   os << "	    mem[addr] <= data_in;" << endl;
+   os << "   end" << endl;
+   os << "endmodule" << endl;
 
 }
 
@@ -434,7 +588,7 @@ void genLayer(int M, int N, int P, int bits, vector<int>& constVector, string mo
 void genAllLayers(int N, int M1, int M2, int M3, int mult_budget, int bits, vector<int>& constVector, string modName, ofstream &os) {
 
    // Here you will write code to figure out the best values to use for P1, P2, and P3, given
-   // mult_budget. 
+   // mult_budget.
    int P1 = 1; // replace this with your optimized value
    int P2 = 1; // replace this with your optimized value
    int P3 = 1; // replace this with your optimized value
@@ -444,7 +598,7 @@ void genAllLayers(int N, int M1, int M2, int M3, int mult_budget, int bits, vect
    os << "module " << modName << "();" << endl;
    os << "   // this module should instantiate three subnetworks and wire them together" << endl;
    os << "endmodule" << endl;
-   
+
    // -------------------------------------------------------------------------
    // Split up constVector for the three layers
    // layer 1's W matrix is M1 x N and its B vector has size M1

@@ -4,8 +4,8 @@
 set CLK_NAME "clk";
 set CLK_PERIOD 1.0;
 set RST_NAME "reset";
-set TOP_MOD_NAME "layer_8_8_1_16";
-set SRC_FILE "layer_8_8_1_16.sv";
+set TOP_MOD_NAME "layer_8_10_1_16";
+set SRC_FILE "layer_8_10_1_16.sv";
 ###############################################
 
 source setupdc.tcl

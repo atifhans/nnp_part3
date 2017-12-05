@@ -51,10 +51,8 @@ def run_sim(M, N, P, bits):
         for line in f:
             if "errors" in line:
                 print line
-            #elif "Throughput" in line:
-            #    print line
 
 run_sim(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
 run_synth(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
-print "Throughput: {}".format(1 + int(sys.argv[2]) + int(sys.argv[1])*(int(sys.argv[2])+3))
+print "Throughput: {}".format(1 + int(sys.argv[2]) + (int(sys.argv[1]) / int(sys.argv[3]))*(int(sys.argv[2])+3+int(sys.argv[3])))
 

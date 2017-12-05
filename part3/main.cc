@@ -9,7 +9,7 @@
 //
 // For Part 3, your code should be in the genAllLayers() function.
 
-#define MAX(x, y) (x > y) ? x : y
+#define MAX(x, y) (((x) > (y)) ? (x) : (y))
 
 #include <iostream>
 #include <fstream>
@@ -546,7 +546,7 @@ void genAllLayers(int N, int M1, int M2, int M3, int mult_budget, int bits, vect
    //Assuming all three layer working on continous data, the throughput of the
    //whole pipeline will be limited by the layer with most multiplication. We
    //tread that as the cost of whole system. I use a greedy algorithm which assign
-   //available multiplier to the layer which decreases the cose of the pipeline most.
+   //available multiplier to the layer which decreases the cost of the pipeline most.
 
    int budget = mult_budget - 3; //3 multipliers are the minimum we need.
 
@@ -581,6 +581,13 @@ void genAllLayers(int N, int M1, int M2, int M3, int mult_budget, int bits, vect
    int P1 = layer_params[0];
    int P2 = layer_params[1];
    int P3 = layer_params[2];
+
+   int l1_cost = (1 + N  + (M1/P1)*(N +3+P1));
+   int l2_cost = (1 + M1 + (M2/P2)*(M1+3+P2));
+   int l3_cost = (1 + M2 + (M3/P3)*(M2+3+P3));
+   int max = MAX(l1_cost, MAX(l2_cost, l3_cost));
+
+   cout << "Throughput: " << max << endl;
 
    //Generating File Header
    os << "// ------------------------------------------//" << endl;
