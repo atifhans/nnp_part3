@@ -1,5 +1,5 @@
 Model Technology ModelSim SE vlog 10.4c Compiler 2015.07 Jul 19 2015
-Start time: 21:32:27 on Dec 02,2017
+Start time: 03:56:11 on Dec 05,2017
 vlog "+acc" layer_16_8_2_16.sv tb_layer_16_8_2_16.sv 
 -- Compiling module layer_16_8_2_16
 -- Compiling module layer_16_8_2_16_W_rom_0
@@ -12,14 +12,14 @@ vlog "+acc" layer_16_8_2_16.sv tb_layer_16_8_2_16.sv
 
 Top level modules:
 	tb_layer_16_8_2_16
-End time: 21:32:27 on Dec 02,2017, Elapsed time: 0:00:00
+End time: 03:56:11 on Dec 05,2017, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 Reading pref.tcl
 
 # 10.4c
 
 # vsim -c tb_layer_16_8_2_16 -do "run -all; quit" 
-# Start time: 21:32:28 on Dec 02,2017
+# Start time: 03:56:12 on Dec 05,2017
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vopt-143) Recognized 1 FSM in module "layer_16_8_2_16(fast)".
 # //  ModelSim SE 10.4c Jul 19 2015 Linux 3.10.0-693.5.2.el7.x86_64
@@ -49,5 +49,5 @@ Reading pref.tcl
 # Simulated       20000 outputs. Found           0 errors.
 # ** Note: $finish    : tb_layer_16_8_2_16.sv(88)
 #    Time: 1683855 ns  Iteration: 2  Instance: /tb_layer_16_8_2_16
-# End time: 21:32:29 on Dec 02,2017, Elapsed time: 0:00:01
+# End time: 03:56:13 on Dec 05,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

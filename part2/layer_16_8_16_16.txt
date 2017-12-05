@@ -1,0 +1,2401 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+         Version J-2014.09-SP5-2 for RHEL64 -- Jul 11, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+##############################################
+# Setup: fill out the following parameters: name of clock signal, clock period (ns),
+# reset signal name (if used), name of top-level module, name of source file
+set CLK_NAME "clk";
+clk
+set CLK_PERIOD 1.0;
+1.0
+set RST_NAME "reset";
+reset
+set TOP_MOD_NAME "layer_16_8_16_16";
+layer_16_8_16_16
+set SRC_FILE "layer_16_8_16_16.sv";
+layer_16_8_16_16.sv
+###############################################
+source setupdc.tcl
+NangateOpenCellLibrary_typical.db dw_foundation.sldb
+file mkdir work_synth
+define_design_lib WORK -path work_synth
+1
+analyze $SRC_FILE -format sverilog
+Running PRESTO HDLC
+Searching for ./layer_16_8_16_16.sv
+Compiling source file ./layer_16_8_16_16.sv
+Presto compilation completed successfully.
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/dw_foundation.sldb'
+1
+elaborate -work WORK $TOP_MOD_NAME
+Loading db file '/usr/local/synopsys/syn/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ./layer_16_8_16_16.sv:64: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:659: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:678: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:698: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:693: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:721: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:716: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:744: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:739: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:767: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:762: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:790: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:785: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:813: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:808: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:836: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:831: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:859: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:854: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:882: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:877: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:905: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:900: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:928: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:923: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:951: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:946: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:974: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:969: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:997: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:992: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1020: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1015: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1043: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1038: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1605: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1622: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:60: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 655 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           657            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 647 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 673 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_wr_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 686 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 709 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 732 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 755 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 778 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 801 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 824 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 847 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 870 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 893 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 916 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 939 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 962 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 985 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1008 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1031 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ram_x_rd_addr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_w_rd_addr_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rom_b_rd_addr_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1054 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  compute_done_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   output_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1072 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1105 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1138 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1171 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1204 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1237 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1270 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1303 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1336 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1369 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1402 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1435 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1468 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1501 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1534 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1567 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_in_cnt_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_req_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_valid_in_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1600 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   vld_out_cnt_reg   | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16 line 1613 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    valid_int_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'layer_16_8_16_16'.
+Information: Building the design 'memory' instantiated from design 'layer_16_8_16_16' with
+	the parameters "WIDTH=16,SIZE=8,LOGSIZE=4". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH16_SIZE8_LOGSIZE4 line 2245 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+=============================================================================
+|          block name/line           | Inputs | Outputs | # sel inputs | MB |
+=============================================================================
+| memory_WIDTH16_SIZE8_LOGSIZE4/2246 |   8    |   16    |      3       | N  |
+=============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_0'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1647: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1648: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1639 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1640           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_0 line 1639 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_0'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1659: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1657 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1658           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_0 line 1657 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'part3_mac' instantiated from design 'layer_16_8_16_16' with
+	the parameters "T=16,NUM_S=1,VEC_S=8". (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:2216: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2217: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2136: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine part3_mac_T16_NUM_S1_VEC_S8 line 2171 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    enable_d_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      a_int_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      b_int_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      x_int_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine part3_mac_T16_NUM_S1_VEC_S8 line 2192 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    enable_f_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      d_int_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine part3_mac_T16_NUM_S1_VEC_S8 line 2208 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     vec_cnt_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|        f_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|    valid_out_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine part3_mac_T16_NUM_S1_VEC_S8 line 2226 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    overflow_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_1'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1670: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1671: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1674: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1675: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1677: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1668 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1669           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_1 line 1668 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_1'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1688: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1686 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1687           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_1 line 1686 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_2'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1701: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1704: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1705: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1706: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1697 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1698           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_2 line 1697 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_2'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1717: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1715 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1716           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_2 line 1715 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_3'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1731: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1733: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1726 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1727           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_3 line 1726 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_3'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1746: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1744 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1745           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_3 line 1744 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_4'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1761: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1755 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1756           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_4 line 1755 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_4'. (HDL-193)
+
+Statistics for case statements in always block at line 1773 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1774           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_4 line 1773 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_5'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1786: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1787: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1788: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1790: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1791: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1793: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1784 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1785           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_5 line 1784 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_5'. (HDL-193)
+
+Statistics for case statements in always block at line 1802 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1803           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_5 line 1802 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_6'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1816: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1817: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1819: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1822: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1813 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1814           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_6 line 1813 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_6'. (HDL-193)
+
+Statistics for case statements in always block at line 1831 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1832           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_6 line 1831 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_7'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1844: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1847: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1842 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1843           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_7 line 1842 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_7'. (HDL-193)
+
+Statistics for case statements in always block at line 1860 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1861           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_7 line 1860 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_8'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1873: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1874: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1875: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1877: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1878: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1879: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1871 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1872           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_8 line 1871 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_8'. (HDL-193)
+
+Statistics for case statements in always block at line 1889 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1890           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_8 line 1889 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_9'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1902: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1904: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1907: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1900 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1901           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_9 line 1900 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_9'. (HDL-193)
+
+Statistics for case statements in always block at line 1918 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1919           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_9 line 1918 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_10'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1931: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1932: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1933: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1936: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1937: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1938: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1929 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1930           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_10 line 1929 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_10'. (HDL-193)
+
+Statistics for case statements in always block at line 1947 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1948           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_10 line 1947 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_11'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1962: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1964: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1965: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1966: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1958 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1959           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_11 line 1958 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_11'. (HDL-193)
+
+Statistics for case statements in always block at line 1976 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1977           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_11 line 1976 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_12'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:1991: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1992: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1994: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:1996: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1987 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1988           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_12 line 1987 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_12'. (HDL-193)
+
+Statistics for case statements in always block at line 2005 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           2006           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_12 line 2005 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_13'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:2018: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2019: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2020: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2022: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2023: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2024: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 2016 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           2017           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_13 line 2016 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_13'. (HDL-193)
+
+Statistics for case statements in always block at line 2034 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           2035           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_13 line 2034 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_14'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:2047: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2049: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2054: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 2045 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           2046           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_14 line 2045 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_14'. (HDL-193)
+
+Statistics for case statements in always block at line 2063 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           2064           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_14 line 2063 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_W_rom_15'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:2077: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2078: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2079: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2080: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./layer_16_8_16_16.sv:2081: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 2074 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           2075           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_W_rom_15 line 2074 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer_16_8_16_16_B_rom_15'. (HDL-193)
+Warning:  ./layer_16_8_16_16.sv:2094: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 2092 in file
+	'./layer_16_8_16_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           2093           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer_16_8_16_16_B_rom_15 line 2092 in file
+		'./layer_16_8_16_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
+###### CLOCKS AND PORTS #######
+set CLK_PORT [get_ports $CLK_NAME]
+{clk}
+set TMP1 [remove_from_collection [all_inputs] $CLK_PORT]
+{reset s_valid m_ready data_in[15] data_in[14] data_in[13] data_in[12] data_in[11] data_in[10] data_in[9] data_in[8] data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+set INPUTS [remove_from_collection $TMP1 $RST_NAME]
+{s_valid m_ready data_in[15] data_in[14] data_in[13] data_in[12] data_in[11] data_in[10] data_in[9] data_in[8] data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+create_clock -period $CLK_PERIOD [get_ports clk]
+1
+# set delay for inputs to be 0.2ns
+set_input_delay 0.2 -max -clock clk $INPUTS
+1
+set_output_delay 0.2 -max -clock clk [all_outputs]
+1
+###### OPTIMIZATION #######
+set_max_area 0 
+1
+###### RUN #####
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | J-2014.09-DWBB_201409.5.2 |   *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.5.2 |   *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 86 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loaded alib file './alib-52/NangateOpenCellLibrary_typical.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping hierarchy u_vec_x_mem_0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_4 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_4 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_4 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_4 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_5 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_5 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_5 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_5 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_6 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_6 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_6 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_6 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_7 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_7 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_7 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_7 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_8 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_8 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_8 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_8 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_9 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_9 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_9 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_9 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_10 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_10 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_10 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_10 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_11 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_11 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_11 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_11 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_12 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_12 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_12 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_12 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_13 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_13 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_13 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_13 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_14 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_14 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_14 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_14 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_vec_x_mem_15 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_w_rom_15 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_b_rom_15 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_mac_15 before Pass 1 (OPT-776)
+Information: Ungrouping 64 of 65 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'layer_16_8_16_16'
+Information: Added key list 'DesignWare' to design 'layer_16_8_16_16'. (DDB-72)
+Information: The register 'u_w_rom_14/z_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'state_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_14/z_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_14/z_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_13/z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_13/z_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_13/z_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_13/z_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_12/z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_12/z_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_12/z_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_12/z_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_12/z_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_12/z_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_12/z_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_11/z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_11/z_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_11/z_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_10/z_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_10/z_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_9/z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_9/z_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_9/z_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_8/z_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_8/z_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_8/z_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_8/z_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_7/z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_7/z_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_6/z_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_6/z_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_6/z_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_6/z_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_6/z_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_5/z_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_5/z_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_5/z_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_5/z_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_4/z_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_4/z_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_4/z_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_4/z_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_2/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_2/z_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_2/z_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_2/z_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_2/z_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_2/z_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_2/z_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_2/z_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_2/z_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_2/z_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_2/z_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_1/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_1/z_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_1/z_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_1/z_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_1/z_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_1/z_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_1/z_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_1/z_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_1/z_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_1/z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_14/z_reg[14]' is removed because it is merged to 'u_w_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_14/z_reg[13]' is removed because it is merged to 'u_w_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_14/z_reg[12]' is removed because it is merged to 'u_w_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_14/z_reg[11]' is removed because it is merged to 'u_w_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_14/z_reg[10]' is removed because it is merged to 'u_w_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_14/z_reg[9]' is removed because it is merged to 'u_w_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_14/z_reg[8]' is removed because it is merged to 'u_w_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_14/z_reg[7]' is removed because it is merged to 'u_w_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[14]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[13]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[12]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[11]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[10]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[9]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[8]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[7]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[6]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[5]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[4]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[2]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_14/z_reg[0]' is removed because it is merged to 'u_b_rom_14/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_13/z_reg[14]' is removed because it is merged to 'u_w_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_13/z_reg[13]' is removed because it is merged to 'u_w_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_13/z_reg[12]' is removed because it is merged to 'u_w_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_13/z_reg[11]' is removed because it is merged to 'u_w_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_13/z_reg[10]' is removed because it is merged to 'u_w_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_13/z_reg[9]' is removed because it is merged to 'u_w_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_13/z_reg[8]' is removed because it is merged to 'u_w_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_13/z_reg[7]' is removed because it is merged to 'u_w_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_13/z_reg[14]' is removed because it is merged to 'u_b_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_13/z_reg[13]' is removed because it is merged to 'u_b_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_13/z_reg[12]' is removed because it is merged to 'u_b_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_13/z_reg[11]' is removed because it is merged to 'u_b_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_13/z_reg[10]' is removed because it is merged to 'u_b_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_13/z_reg[9]' is removed because it is merged to 'u_b_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_13/z_reg[8]' is removed because it is merged to 'u_b_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_13/z_reg[7]' is removed because it is merged to 'u_b_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_13/z_reg[5]' is removed because it is merged to 'u_b_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_13/z_reg[3]' is removed because it is merged to 'u_b_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_13/z_reg[1]' is removed because it is merged to 'u_b_rom_13/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_12/z_reg[14]' is removed because it is merged to 'u_w_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_12/z_reg[13]' is removed because it is merged to 'u_w_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_12/z_reg[12]' is removed because it is merged to 'u_w_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_12/z_reg[11]' is removed because it is merged to 'u_w_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_12/z_reg[10]' is removed because it is merged to 'u_w_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_12/z_reg[9]' is removed because it is merged to 'u_w_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_12/z_reg[8]' is removed because it is merged to 'u_w_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_12/z_reg[7]' is removed because it is merged to 'u_w_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_12/z_reg[14]' is removed because it is merged to 'u_b_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_12/z_reg[13]' is removed because it is merged to 'u_b_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_12/z_reg[12]' is removed because it is merged to 'u_b_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_12/z_reg[11]' is removed because it is merged to 'u_b_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_12/z_reg[10]' is removed because it is merged to 'u_b_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_12/z_reg[9]' is removed because it is merged to 'u_b_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_12/z_reg[8]' is removed because it is merged to 'u_b_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_12/z_reg[7]' is removed because it is merged to 'u_b_rom_12/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_11/z_reg[14]' is removed because it is merged to 'u_w_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_11/z_reg[13]' is removed because it is merged to 'u_w_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_11/z_reg[12]' is removed because it is merged to 'u_w_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_11/z_reg[11]' is removed because it is merged to 'u_w_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_11/z_reg[10]' is removed because it is merged to 'u_w_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_11/z_reg[9]' is removed because it is merged to 'u_w_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_11/z_reg[8]' is removed because it is merged to 'u_w_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_11/z_reg[7]' is removed because it is merged to 'u_w_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_11/z_reg[14]' is removed because it is merged to 'u_b_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_11/z_reg[13]' is removed because it is merged to 'u_b_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_11/z_reg[12]' is removed because it is merged to 'u_b_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_11/z_reg[11]' is removed because it is merged to 'u_b_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_11/z_reg[10]' is removed because it is merged to 'u_b_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_11/z_reg[9]' is removed because it is merged to 'u_b_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_11/z_reg[8]' is removed because it is merged to 'u_b_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_11/z_reg[7]' is removed because it is merged to 'u_b_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_11/z_reg[3]' is removed because it is merged to 'u_b_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_11/z_reg[2]' is removed because it is merged to 'u_b_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_11/z_reg[1]' is removed because it is merged to 'u_b_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_11/z_reg[0]' is removed because it is merged to 'u_b_rom_11/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_10/z_reg[14]' is removed because it is merged to 'u_w_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_10/z_reg[13]' is removed because it is merged to 'u_w_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_10/z_reg[12]' is removed because it is merged to 'u_w_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_10/z_reg[11]' is removed because it is merged to 'u_w_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_10/z_reg[10]' is removed because it is merged to 'u_w_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_10/z_reg[9]' is removed because it is merged to 'u_w_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_10/z_reg[8]' is removed because it is merged to 'u_w_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_10/z_reg[7]' is removed because it is merged to 'u_w_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[14]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[13]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[12]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[11]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[10]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[9]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[8]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[7]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[6]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[5]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[4]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[3]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_10/z_reg[1]' is removed because it is merged to 'u_b_rom_10/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_9/z_reg[14]' is removed because it is merged to 'u_w_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_9/z_reg[13]' is removed because it is merged to 'u_w_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_9/z_reg[12]' is removed because it is merged to 'u_w_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_9/z_reg[11]' is removed because it is merged to 'u_w_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_9/z_reg[10]' is removed because it is merged to 'u_w_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_9/z_reg[9]' is removed because it is merged to 'u_w_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_9/z_reg[8]' is removed because it is merged to 'u_w_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_9/z_reg[7]' is removed because it is merged to 'u_w_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_9/z_reg[14]' is removed because it is merged to 'u_b_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_9/z_reg[13]' is removed because it is merged to 'u_b_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_9/z_reg[12]' is removed because it is merged to 'u_b_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_9/z_reg[11]' is removed because it is merged to 'u_b_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_9/z_reg[10]' is removed because it is merged to 'u_b_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_9/z_reg[9]' is removed because it is merged to 'u_b_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_9/z_reg[8]' is removed because it is merged to 'u_b_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_9/z_reg[7]' is removed because it is merged to 'u_b_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_9/z_reg[5]' is removed because it is merged to 'u_b_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_9/z_reg[3]' is removed because it is merged to 'u_b_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_9/z_reg[1]' is removed because it is merged to 'u_b_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_9/z_reg[0]' is removed because it is merged to 'u_b_rom_9/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_8/z_reg[14]' is removed because it is merged to 'u_w_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_8/z_reg[13]' is removed because it is merged to 'u_w_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_8/z_reg[12]' is removed because it is merged to 'u_w_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_8/z_reg[11]' is removed because it is merged to 'u_w_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_8/z_reg[10]' is removed because it is merged to 'u_w_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_8/z_reg[9]' is removed because it is merged to 'u_w_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_8/z_reg[8]' is removed because it is merged to 'u_w_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_8/z_reg[7]' is removed because it is merged to 'u_w_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_8/z_reg[14]' is removed because it is merged to 'u_b_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_8/z_reg[13]' is removed because it is merged to 'u_b_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_8/z_reg[12]' is removed because it is merged to 'u_b_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_8/z_reg[11]' is removed because it is merged to 'u_b_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_8/z_reg[10]' is removed because it is merged to 'u_b_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_8/z_reg[9]' is removed because it is merged to 'u_b_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_8/z_reg[8]' is removed because it is merged to 'u_b_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_8/z_reg[7]' is removed because it is merged to 'u_b_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_8/z_reg[6]' is removed because it is merged to 'u_b_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_8/z_reg[1]' is removed because it is merged to 'u_b_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_8/z_reg[0]' is removed because it is merged to 'u_b_rom_8/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_7/z_reg[14]' is removed because it is merged to 'u_w_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_7/z_reg[13]' is removed because it is merged to 'u_w_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_7/z_reg[12]' is removed because it is merged to 'u_w_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_7/z_reg[11]' is removed because it is merged to 'u_w_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_7/z_reg[10]' is removed because it is merged to 'u_w_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_7/z_reg[9]' is removed because it is merged to 'u_w_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_7/z_reg[8]' is removed because it is merged to 'u_w_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_7/z_reg[7]' is removed because it is merged to 'u_w_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_7/z_reg[1]' is removed because it is merged to 'u_w_rom_7/z_reg[2]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[14]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[13]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[12]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[11]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[10]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[9]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[8]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[7]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[5]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[4]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[3]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[2]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_7/z_reg[0]' is removed because it is merged to 'u_b_rom_7/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_6/z_reg[14]' is removed because it is merged to 'u_w_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_6/z_reg[13]' is removed because it is merged to 'u_w_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_6/z_reg[12]' is removed because it is merged to 'u_w_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_6/z_reg[11]' is removed because it is merged to 'u_w_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_6/z_reg[10]' is removed because it is merged to 'u_w_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_6/z_reg[9]' is removed because it is merged to 'u_w_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_6/z_reg[8]' is removed because it is merged to 'u_w_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_6/z_reg[7]' is removed because it is merged to 'u_w_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_6/z_reg[14]' is removed because it is merged to 'u_b_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_6/z_reg[13]' is removed because it is merged to 'u_b_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_6/z_reg[12]' is removed because it is merged to 'u_b_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_6/z_reg[11]' is removed because it is merged to 'u_b_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_6/z_reg[10]' is removed because it is merged to 'u_b_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_6/z_reg[9]' is removed because it is merged to 'u_b_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_6/z_reg[8]' is removed because it is merged to 'u_b_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_6/z_reg[7]' is removed because it is merged to 'u_b_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_6/z_reg[6]' is removed because it is merged to 'u_b_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_6/z_reg[5]' is removed because it is merged to 'u_b_rom_6/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_5/z_reg[14]' is removed because it is merged to 'u_w_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_5/z_reg[13]' is removed because it is merged to 'u_w_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_5/z_reg[12]' is removed because it is merged to 'u_w_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_5/z_reg[11]' is removed because it is merged to 'u_w_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_5/z_reg[10]' is removed because it is merged to 'u_w_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_5/z_reg[9]' is removed because it is merged to 'u_w_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_5/z_reg[8]' is removed because it is merged to 'u_w_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_5/z_reg[7]' is removed because it is merged to 'u_w_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_5/z_reg[14]' is removed because it is merged to 'u_b_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_5/z_reg[13]' is removed because it is merged to 'u_b_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_5/z_reg[12]' is removed because it is merged to 'u_b_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_5/z_reg[11]' is removed because it is merged to 'u_b_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_5/z_reg[10]' is removed because it is merged to 'u_b_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_5/z_reg[9]' is removed because it is merged to 'u_b_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_5/z_reg[8]' is removed because it is merged to 'u_b_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_5/z_reg[7]' is removed because it is merged to 'u_b_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_5/z_reg[6]' is removed because it is merged to 'u_b_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_5/z_reg[3]' is removed because it is merged to 'u_b_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_5/z_reg[2]' is removed because it is merged to 'u_b_rom_5/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_4/z_reg[14]' is removed because it is merged to 'u_b_rom_4/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_4/z_reg[13]' is removed because it is merged to 'u_b_rom_4/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_4/z_reg[12]' is removed because it is merged to 'u_b_rom_4/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_4/z_reg[11]' is removed because it is merged to 'u_b_rom_4/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_4/z_reg[10]' is removed because it is merged to 'u_b_rom_4/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_4/z_reg[9]' is removed because it is merged to 'u_b_rom_4/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_4/z_reg[8]' is removed because it is merged to 'u_b_rom_4/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_4/z_reg[7]' is removed because it is merged to 'u_b_rom_4/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_4/z_reg[6]' is removed because it is merged to 'u_b_rom_4/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_4/z_reg[2]' is removed because it is merged to 'u_b_rom_4/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_4/z_reg[0]' is removed because it is merged to 'u_b_rom_4/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_3/z_reg[14]' is removed because it is merged to 'u_w_rom_3/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_3/z_reg[13]' is removed because it is merged to 'u_w_rom_3/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_3/z_reg[12]' is removed because it is merged to 'u_w_rom_3/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_3/z_reg[11]' is removed because it is merged to 'u_w_rom_3/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_3/z_reg[10]' is removed because it is merged to 'u_w_rom_3/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_3/z_reg[9]' is removed because it is merged to 'u_w_rom_3/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_3/z_reg[8]' is removed because it is merged to 'u_w_rom_3/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_3/z_reg[7]' is removed because it is merged to 'u_w_rom_3/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_3/z_reg[3]' is removed because it is merged to 'u_b_rom_3/z_reg[6]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_3/z_reg[1]' is removed because it is merged to 'u_b_rom_3/z_reg[6]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_3/z_reg[0]' is removed because it is merged to 'u_b_rom_3/z_reg[6]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_2/z_reg[14]' is removed because it is merged to 'u_w_rom_2/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_2/z_reg[13]' is removed because it is merged to 'u_w_rom_2/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_2/z_reg[12]' is removed because it is merged to 'u_w_rom_2/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_2/z_reg[11]' is removed because it is merged to 'u_w_rom_2/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_2/z_reg[10]' is removed because it is merged to 'u_w_rom_2/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_2/z_reg[9]' is removed because it is merged to 'u_w_rom_2/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_2/z_reg[8]' is removed because it is merged to 'u_w_rom_2/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_2/z_reg[7]' is removed because it is merged to 'u_w_rom_2/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_2/z_reg[5]' is removed because it is merged to 'u_b_rom_2/z_reg[6]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_2/z_reg[4]' is removed because it is merged to 'u_b_rom_2/z_reg[6]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_2/z_reg[3]' is removed because it is merged to 'u_b_rom_2/z_reg[6]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_2/z_reg[2]' is removed because it is merged to 'u_b_rom_2/z_reg[6]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_1/z_reg[14]' is removed because it is merged to 'u_w_rom_1/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_1/z_reg[13]' is removed because it is merged to 'u_w_rom_1/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_1/z_reg[12]' is removed because it is merged to 'u_w_rom_1/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_1/z_reg[11]' is removed because it is merged to 'u_w_rom_1/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_1/z_reg[10]' is removed because it is merged to 'u_w_rom_1/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_1/z_reg[9]' is removed because it is merged to 'u_w_rom_1/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_1/z_reg[8]' is removed because it is merged to 'u_w_rom_1/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_1/z_reg[7]' is removed because it is merged to 'u_w_rom_1/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_1/z_reg[4]' is removed because it is merged to 'u_b_rom_1/z_reg[5]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_1/z_reg[3]' is removed because it is merged to 'u_b_rom_1/z_reg[5]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_1/z_reg[2]' is removed because it is merged to 'u_b_rom_1/z_reg[5]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_1/z_reg[1]' is removed because it is merged to 'u_b_rom_1/z_reg[5]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_1/z_reg[0]' is removed because it is merged to 'u_b_rom_1/z_reg[5]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_0/z_reg[14]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_0/z_reg[13]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_0/z_reg[12]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_0/z_reg[11]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_0/z_reg[10]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_0/z_reg[9]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_0/z_reg[8]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_0/z_reg[7]' is removed because it is merged to 'u_w_rom_0/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_0/z_reg[1]' is removed because it is merged to 'u_b_rom_0/z_reg[6]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_0/z_reg[0]' is removed because it is merged to 'u_b_rom_0/z_reg[6]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_15/z_reg[14]' is removed because it is merged to 'u_w_rom_15/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_15/z_reg[13]' is removed because it is merged to 'u_w_rom_15/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_15/z_reg[12]' is removed because it is merged to 'u_w_rom_15/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_15/z_reg[11]' is removed because it is merged to 'u_w_rom_15/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_15/z_reg[10]' is removed because it is merged to 'u_w_rom_15/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_15/z_reg[9]' is removed because it is merged to 'u_w_rom_15/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_15/z_reg[8]' is removed because it is merged to 'u_w_rom_15/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_w_rom_15/z_reg[7]' is removed because it is merged to 'u_w_rom_15/z_reg[15]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_15/z_reg[4]' is removed because it is merged to 'u_b_rom_15/z_reg[6]'. (OPT-1215)
+Information: In design 'layer_16_8_16_16', the register 'u_b_rom_15/z_reg[0]' is removed because it is merged to 'u_b_rom_15/z_reg[6]'. (OPT-1215)
+ Implement Synthetic for 'layer_16_8_16_16'.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The register 'u_mac_15/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_12/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_6/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_3/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_2/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_1/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_0/vec_cnt_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[13][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_13/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/b_int_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/b_int_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/b_int_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/b_int_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/b_int_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/b_int_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/b_int_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/b_int_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/b_int_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/b_int_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/b_int_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_13/b_int_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[12][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_12/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_12/b_int_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_12/b_int_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_12/b_int_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_12/b_int_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_12/b_int_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_12/b_int_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_12/b_int_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_12/b_int_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_12/b_int_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[8][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_8/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/b_int_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/b_int_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/b_int_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/b_int_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/b_int_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/b_int_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/b_int_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/b_int_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/b_int_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/b_int_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/b_int_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_8/b_int_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[6][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_6/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_6/b_int_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_6/b_int_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_6/b_int_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_6/b_int_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_6/b_int_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_6/b_int_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_6/b_int_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_6/b_int_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_6/b_int_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_6/b_int_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_6/b_int_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[0][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_0/z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_0/b_int_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_0/b_int_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_0/b_int_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_15/z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_15/b_int_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_15/b_int_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_15/b_int_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[14][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_14/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_14/b_int_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[11][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_11/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_11/b_int_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[10][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_10/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_10/b_int_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[9][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_9/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_9/b_int_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[7][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_7/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_7/b_int_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[5][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_5/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/b_int_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/b_int_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/b_int_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/b_int_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/b_int_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/b_int_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/b_int_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/b_int_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/b_int_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/b_int_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/b_int_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_5/b_int_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[4][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_4/z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/b_int_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/b_int_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/b_int_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/b_int_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/b_int_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/b_int_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/b_int_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/b_int_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/b_int_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/b_int_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/b_int_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_4/b_int_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[3][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_3/z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_3/b_int_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_3/b_int_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_3/b_int_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_3/b_int_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[2][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_2/z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_2/b_int_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_2/b_int_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_2/b_int_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_2/b_int_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_2/b_int_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[1][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_b_rom_1/z_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_1/b_int_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_1/b_int_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_1/b_int_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_1/b_int_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_1/b_int_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_mac_1/b_int_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'rom_b_rd_addr_reg[0][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[0][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[1][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[1][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[2][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[2][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[3][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[3][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[4][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[4][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[5][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[5][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[6][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[6][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[7][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[7][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[8][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[8][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[9][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[9][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[10][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[10][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[11][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[11][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[12][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[12][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[13][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[13][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[14][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[14][0]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[15][-1]' will be removed. (OPT-1207)
+Information: The register 'rom_b_rd_addr_reg[15][0]' will be removed. (OPT-1207)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+Information: The register 'ram_x_wr_addr_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[0][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[0][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[0][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[0][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_out_cnt_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[4][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[4][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[4][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[4][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[12][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[12][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[12][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[12][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[14][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[14][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[14][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[14][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[7][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[7][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[7][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[7][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[5][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[5][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[5][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[5][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[3][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[3][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[3][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[3][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[2][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[2][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[2][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[2][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[10][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[10][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[10][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[10][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[11][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[11][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[11][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[11][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[1][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[1][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[1][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[1][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[9][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[9][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[9][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[9][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[8][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[8][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[8][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[8][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[6][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[6][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[6][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[6][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[13][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[13][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[13][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[13][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[15][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[15][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[15][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ram_x_rd_addr_reg[15][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'vld_in_cnt_reg[15][1]' is a constant and will be removed. (OPT-1206)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:38   44900.8      0.77     340.9      92.1                           1035292.3750
+    0:00:38   44900.8      0.77     340.9      92.1                           1035292.3750
+    0:00:38   44900.8      0.77     340.9      92.1                           1035292.3750
+    0:00:38   44891.5      0.41     276.1      87.6                           1034812.6875
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Mapping 'layer_16_8_16_16_DW_mult_uns_16'
+    0:01:00   39282.6      0.18      35.4       9.5                           820021.7500
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:00   39282.6      0.18      35.4       9.5                           820021.7500
+    0:01:00   39282.6      0.18      35.4       9.5                           820021.7500
+    0:01:01   39274.1      0.18      42.6       9.5                           819564.6250
+    0:01:01   39274.1      0.18      42.6       9.5                           819564.6250
+    0:01:05   39450.2      0.15      40.2       9.5                           825253.3750
+    0:01:05   39450.2      0.15      40.2       9.5                           825253.3750
+    0:01:05   39450.2      0.15      40.2       9.5                           825253.3750
+    0:01:05   39450.2      0.15      40.2       9.5                           825253.3750
+    0:01:05   39450.2      0.15      40.2       9.5                           825253.3750
+    0:01:05   39450.2      0.15      40.2       9.5                           825253.3750
+    0:01:06   39604.5      0.14      39.2       9.5                           830599.1250
+    0:01:06   39604.5      0.14      39.2       9.5                           830599.1250
+    0:01:08   39681.9      0.14      38.6       5.9                           833124.5000
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:01:08   39677.6      0.14      38.5       5.9                           833074.6250
+    0:01:11   40104.8      0.11      35.7       5.9                           847513.1875
+    0:01:11   40104.8      0.11      35.7       5.9                           847513.1875
+    0:01:12   40124.2      0.11      35.6       5.9                           848136.6875
+    0:01:12   40122.9      0.13      35.7       5.9                           848165.8125
+    0:01:14   40223.2      0.11      34.8       5.9                           851688.2500
+    0:01:14   40223.2      0.11      34.8       5.9                           851688.2500
+    0:01:15   40223.2      0.11      34.8       5.9                           851688.2500
+    0:01:15   40220.8      0.11      34.7       5.9                           851616.4375
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:15   40220.8      0.11      34.7       5.9                           851616.4375
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+    0:01:16   40208.0      0.10      33.5       0.0 u_mac_0/d_int_reg[15]/D   850989.1875
+    0:01:17   40222.1      0.09      33.0       0.0                           851680.1875
+    0:01:18   40275.1      0.09      32.7       0.0                           853266.6875
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:18   40275.1      0.09      32.7       0.0                           853266.6875
+    0:01:19   40246.6      0.09      32.7       0.0                           852418.0000
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:21   40237.6      0.09      32.7       0.0                           852195.1250
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+  Global Optimization (Phase 51)
+  Global Optimization (Phase 52)
+  Global Optimization (Phase 53)
+  Global Optimization (Phase 54)
+  Global Optimization (Phase 55)
+  Global Optimization (Phase 56)
+  Global Optimization (Phase 57)
+  Global Optimization (Phase 58)
+  Global Optimization (Phase 59)
+  Global Optimization (Phase 60)
+  Global Optimization (Phase 61)
+  Global Optimization (Phase 62)
+  Global Optimization (Phase 63)
+    0:01:33   39845.5      0.01       0.2       0.0 u_mac_7/d_int_reg[13]/D   833103.3750
+    0:01:34   39875.0      0.00       0.1       0.0 u_mac_8/d_int_reg[15]/D   833837.6875
+    0:01:34   39877.7      0.00       0.1       0.0                           833915.8750
+    0:01:34   39897.6      0.00       0.0       0.0                           834587.8125
+    0:01:34   39897.6      0.00       0.0       0.0                           834587.8125
+    0:01:36   39857.7      0.00       0.0       0.0                           831686.3750
+    0:01:36   39857.7      0.00       0.0       0.0                           831686.3750
+    0:01:36   39857.7      0.00       0.0       0.0                           831686.3750
+    0:01:36   39857.7      0.00       0.0       0.0                           831686.3750
+    0:01:36   39857.7      0.00       0.0       0.0                           831686.3750
+    0:01:36   39857.7      0.00       0.0       0.0                           831686.3750
+    0:01:36   39857.7      0.00       0.0       0.0                           831686.3750
+    0:01:36   39857.7      0.00       0.0       0.0                           831686.3750
+    0:01:37   39911.4      0.00       0.0       0.0                           833612.6875
+    0:01:37   39911.4      0.00       0.0       0.0                           833612.6875
+    0:01:37   39911.4      0.00       0.0       0.0                           833612.6875
+    0:01:37   39911.4      0.00       0.0       0.0                           833612.6875
+    0:01:37   39911.4      0.00       0.0       0.0                           833612.6875
+    0:01:37   39911.4      0.00       0.0       0.0                           833612.6875
+    0:01:37   39911.4      0.00       0.0       0.0                           833612.6875
+    0:01:37   39911.4      0.00       0.0       0.0                           833612.6875
+    0:01:37   39911.4      0.00       0.0       0.0                           833612.6875
+    0:01:37   39911.4      0.00       0.0       0.0                           833612.6875
+    0:01:37   39911.4      0.00       0.0       0.0                           833612.6875
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:38   39911.4      0.00       0.0       0.0                           833612.6875
+    0:01:40   39727.1      0.01       0.1       0.0                           827153.7500
+    0:01:40   39728.2      0.01       0.1       0.0                           827225.1875
+    0:01:40   39728.2      0.01       0.1       0.0                           827225.1875
+    0:01:41   39727.1      0.01       0.1       0.0                           827178.3125
+    0:01:42   39662.5      0.01       0.1       0.0                           825218.4375
+    0:01:43   39636.1      0.01       0.1       0.0                           823933.8750
+    0:01:43   39756.6      0.00       0.0       0.0                           828354.2500
+    0:01:44   39676.6      0.00       0.0       0.0                           824833.2500
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'layer_16_8_16_16' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 3895 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+report_area
+ 
+****************************************
+Report : area
+Design : layer_16_8_16_16
+Version: J-2014.09-SP5-2
+Date   : Tue Dec  5 03:59:53 2017
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'layer_16_8_16_16' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+Number of ports:                           38
+Number of nets:                         24125
+Number of cells:                        22908
+Number of combinational cells:          19013
+Number of sequential cells:              3895
+Number of macros/black boxes:               0
+Number of buf/inv:                       4433
+Number of references:                      45
+
+Combinational area:              22042.888137
+Buf/Inv area:                     2439.220018
+Noncombinational area:           17633.671364
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 39676.559501
+Total area:                 undefined
+1
+report_power
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : layer_16_8_16_16
+Version: J-2014.09-SP5-2
+Date   : Tue Dec  5 03:59:54 2017
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+layer_16_8_16_16       5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =  20.6407 mW   (90%)
+  Net Switching Power  =   2.2014 mW   (10%)
+                         ---------
+Total Dynamic Power    =  22.8421 mW  (100%)
+
+Cell Leakage Power     = 818.2302 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       1.9438e+04          401.2075        3.0608e+05        2.0145e+04  (  85.14%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  1.2030e+03        1.8002e+03        5.1215e+05        3.5153e+03  (  14.86%)
+--------------------------------------------------------------------------------------------------
+Total          2.0641e+04 uW     2.2014e+03 uW     8.1823e+05 nW     2.3660e+04 uW
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : layer_16_8_16_16
+Version: J-2014.09-SP5-2
+Date   : Tue Dec  5 03:59:54 2017
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: u_mac_2/a_int_reg[10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_mac_2/d_int_reg[12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  layer_16_8_16_16   5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  u_mac_2/a_int_reg[10]/CK (SDFF_X1)       0.00 #     0.00 r
+  u_mac_2/a_int_reg[10]/QN (SDFF_X1)       0.09       0.09 f
+  U12377/ZN (XNOR2_X2)                     0.11       0.20 r
+  U14492/ZN (NAND2_X1)                     0.05       0.25 f
+  U14497/ZN (OAI22_X1)                     0.06       0.31 r
+  U14498/Z (XOR2_X1)                       0.08       0.39 r
+  U14581/CO (FA_X1)                        0.08       0.46 r
+  U14566/S (FA_X1)                         0.11       0.58 f
+  U14567/S (FA_X1)                         0.14       0.71 r
+  U14712/ZN (NAND2_X1)                     0.04       0.75 f
+  U12252/Z (BUF_X1)                        0.04       0.79 f
+  U23032/ZN (AND2_X1)                      0.04       0.83 f
+  U23033/ZN (XNOR2_X1)                     0.05       0.89 f
+  U23034/ZN (AOI22_X1)                     0.05       0.93 r
+  U23035/ZN (INV_X1)                       0.02       0.95 f
+  u_mac_2/d_int_reg[12]/D (DFF_X1)         0.01       0.96 f
+  data arrival time                                   0.96
+
+  clock clk (rise edge)                    1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  u_mac_2/d_int_reg[12]/CK (DFF_X1)        0.00       1.00 r
+  library setup time                      -0.04       0.96
+  data required time                                  0.96
+  -----------------------------------------------------------
+  data required time                                  0.96
+  data arrival time                                  -0.96
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1
+write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
+Writing verilog file '/home/home5/aahangar/proj3/part2/gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+quit
+
+Thank you...
