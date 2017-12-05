@@ -1,0 +1,70 @@
+Throughput: 69
+Model Technology ModelSim SE vlog 10.4c Compiler 2015.07 Jul 19 2015
+Start time: 04:13:39 on Dec 05,2017
+vlog "+acc" network_4_8_12_16_3_16.sv tb_network_4_8_12_16_3_16.sv 
+-- Compiling module network_4_8_12_16_3_16
+-- Compiling module layer1_8_4_1_16
+-- Compiling module layer1_8_4_1_16_W_rom_0
+-- Compiling module layer1_8_4_1_16_B_rom_0
+-- Compiling module layer2_12_8_1_16
+-- Compiling module layer2_12_8_1_16_W_rom_0
+-- Compiling module layer2_12_8_1_16_B_rom_0
+-- Compiling module layer3_16_12_1_16
+-- Compiling module layer3_16_12_1_16_W_rom_0
+-- Compiling module layer3_16_12_1_16_B_rom_0
+-- Compiling module part3_mac
+-- Compiling module memory
+-- Compiling module tb_network_4_8_12_16_3_16
+
+Top level modules:
+	tb_network_4_8_12_16_3_16
+End time: 04:13:39 on Dec 05,2017, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 10.4c
+
+# vsim -c tb_network_4_8_12_16_3_16 -do "run -all; quit" 
+# Start time: 04:13:40 on Dec 05,2017
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "layer1_8_4_1_16(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "layer2_12_8_1_16(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "layer3_16_12_1_16(fast)".
+# //  ModelSim SE 10.4c Jul 19 2015 Linux 3.10.0-693.5.2.el7.x86_64
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_network_4_8_12_16_3_16(fast)
+# Loading work.network_4_8_12_16_3_16(fast)
+# Loading work.layer1_8_4_1_16(fast)
+# Loading work.memory(fast)
+# Loading work.layer1_8_4_1_16_W_rom_0(fast)
+# Loading work.layer1_8_4_1_16_B_rom_0(fast)
+# Loading work.part3_mac(fast)
+# Loading work.layer2_12_8_1_16(fast)
+# Loading work.memory(fast__1)
+# Loading work.layer2_12_8_1_16_W_rom_0(fast)
+# Loading work.layer2_12_8_1_16_B_rom_0(fast)
+# Loading work.part3_mac(fast__1)
+# Loading work.layer3_16_12_1_16(fast)
+# Loading work.memory(fast__2)
+# Loading work.layer3_16_12_1_16_W_rom_0(fast)
+# Loading work.layer3_16_12_1_16_B_rom_0(fast)
+# Loading work.part3_mac(fast__2)
+# run -all
+# Simulated       40000 outputs. Found           0 errors.
+# ** Note: $finish    : tb_network_4_8_12_16_3_16.sv(88)
+#    Time: 10848125 ns  Iteration: 2  Instance: /tb_network_4_8_12_16_3_16
+# End time: 04:13:43 on Dec 05,2017, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0

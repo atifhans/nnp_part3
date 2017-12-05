@@ -9,7 +9,7 @@
 //
 // For Part 3, your code should be in the genAllLayers() function.
 
-#define MAX(x, y) (((x) > (y)) ? (x) : (y))
+#define MAX(x, y) (x > y) ? x : y
 
 #include <iostream>
 #include <fstream>
@@ -122,29 +122,162 @@ int main(int argc, char* argv[]) {
       return 1;
    }
 
+   os << "module part3_mac #(parameter T = 8," << endl;
+   os << "                   parameter NUM_S =  2," << endl;
+   os << "                   parameter VEC_S =  3)" << endl;
+   os << "(" << endl;
+   os << "    input  logic                clk, " << endl;
+   os << "    input  logic                reset," << endl;
+   os << "    input  logic signed [T-1:0] a, " << endl;
+   os << "    input  logic signed [T-1:0] b,  " << endl;
+   os << "    input  logic        [T-1:0] x,  " << endl;
+   os << "    input  logic                valid_in," << endl;
+   os << "    output logic signed [T-1:0] f, " << endl;
+   os << "    output logic                valid_out," << endl;
+   os << "    output logic                overflow" << endl;
+   os << ");" << endl;
+   os << "" << endl;
+   os << "    localparam VCNT_LSIZE  = $clog2(VEC_S+1);" << endl;
+   os << "" << endl;
+   os << "    logic signed [T-1:0]    a_int;" << endl;
+   os << "    logic signed [T-1:0]    b_int;" << endl;
+   os << "    logic        [T-1:0]    x_int;" << endl;
+   os << "    logic signed [T-1:0]    c_int;" << endl;
+   os << "    logic signed [T-1:0]    d_int;" << endl;
+   os << "    logic signed [T-1:0]    e_int;" << endl;
+   os << "    logic                   overflow_int;" << endl;
+   os << "    logic                   enable_d;" << endl;
+   os << "    logic                   enable_f;" << endl;
+   os << "    logic [NUM_S-1:0]       enable_m;" << endl;
+   os << "    logic [VCNT_LSIZE-1:0]  vec_cnt;" << endl;
+   os << "" << endl;
+   os << "    assign e_int = f + d_int;" << endl;
+   os << "" << endl;
+   os << "    //Simple overflow detection logic" << endl;
+   os << "    assign overflow_int = ( f[T-1] &  d_int[T-1] & !e_int[T-1]) |" << endl;
+   os << "                          (!f[T-1] & !d_int[T-1] &  e_int[T-1]);" << endl;
+   os << "" << endl;
+   os << "    generate" << endl;
+   os << "        if (NUM_S == 1) begin" << endl;
+   os << "            assign c_int = (a_int * x_int);" << endl;
+   os << "            assign enable_m[0] = enable_d;" << endl;
+   os << "        end" << endl;
+   os << "        else begin " << endl;
+   os << "            if (NUM_S == 2) begin" << endl;
+   os << "                DW02_mult_2_stage #(8, 8) multinstance(a_int, x_int, 1'b1, clk, c_int);" << endl;
+   os << "            end" << endl;
+   os << "            else if(NUM_S == 3) begin" << endl;
+   os << "                DW02_mult_3_stage #(8, 8) multinstance(a_int, x_int, 1'b1, clk, c_int);" << endl;
+   os << "            end" << endl;
+   os << "            else if(NUM_S == 4) begin" << endl;
+   os << "                DW02_mult_4_stage #(8, 8) multinstance(a_int, x_int, 1'b1, clk, c_int);" << endl;
+   os << "            end" << endl;
+   os << "            else if(NUM_S == 5) begin" << endl;
+   os << "                DW02_mult_5_stage #(8, 8) multinstance(a_int, x_int, 1'b1, clk, c_int);" << endl;
+   os << "            end" << endl;
+   os << "            else if(NUM_S == 6) begin" << endl;
+   os << "                DW02_mult_6_stage #(8, 8) multinstance(a_int, x_int, 1'b1, clk, c_int);" << endl;
+   os << "            end" << endl;
+   os << "" << endl;
+   os << "            always_ff @(posedge clk)" << endl;
+   os << "                if (reset) begin" << endl;
+   os << "                    enable_m <= 'd0;" << endl;
+   os << "                end" << endl;
+   os << "                else begin" << endl;
+   os << "                    enable_m[NUM_S-2] <= enable_d;" << endl;
+   os << "                    for(int i = 0; i < NUM_S-2; i++)" << endl;
+   os << "                        enable_m[i] <= enable_m[i+1];" << endl;
+   os << "                end" << endl;
+   os << "        end" << endl;
+   os << "    endgenerate" << endl;
+   os << "" << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    // Flopping the a, b and valid_in input." << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    always_ff @(posedge clk)" << endl;
+   os << "        if (reset) begin" << endl;
+   os << "            a_int    <=  'd0;" << endl;
+   os << "            b_int    <=  'd0;" << endl;
+   os << "            x_int    <=  'd0;" << endl;
+   os << "            enable_d <= 1'b0;" << endl;
+   os << "        end" << endl;
+   os << "        else if (valid_in) begin" << endl;
+   os << "            a_int    <= a;" << endl;
+   os << "            b_int    <= b;" << endl;
+   os << "            x_int    <= x;" << endl;
+   os << "            enable_d <= 1'b1;" << endl;
+   os << "        end" << endl;
+   os << "        else begin" << endl;
+   os << "            enable_d <= 1'b0;" << endl;
+   os << "        end" << endl;
+   os << "" << endl;
+   os << "" << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    // Pipeline reg between multiplier and adder." << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    always_ff @(posedge clk)" << endl;
+   os << "        if (reset) begin" << endl;
+   os << "            d_int    <=  'd0;" << endl;
+   os << "            enable_f <= 1'b0;" << endl;
+   os << "        end" << endl;
+   os << "        else if (enable_m[0]) begin" << endl;
+   os << "            d_int    <= c_int; " << endl;
+   os << "            enable_f <= 1'b1;" << endl;
+   os << "        end" << endl;
+   os << "        else begin" << endl;
+   os << "            enable_f <= 1'b0;" << endl;
+   os << "        end" << endl;
+   os << "" << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    // Doing MAC operation." << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    always_ff @(posedge clk)" << endl;
+   os << "        if (reset) begin" << endl;
+   os << "            f         <=   'd0;" << endl;
+   os << "            valid_out <=  1'b0; " << endl;
+   os << "            vec_cnt   <=   'd0;" << endl;
+   os << "        end" << endl;
+   os << "        else if (enable_f) begin" << endl;
+   os << "            f         <= (vec_cnt ==    2'd0) ? d_int + b_int : f + d_int;" << endl;
+   os << "            vec_cnt   <= (vec_cnt == VEC_S-1) ? 0 : vec_cnt + 1'b1;" << endl;
+   os << "            valid_out <= (vec_cnt == VEC_S-1) ? 1'b1 : 1'b0;" << endl;
+   os << "        end" << endl;
+   os << "        else begin" << endl;
+   os << "            valid_out <= 1'b0;" << endl;
+   os << "        end" << endl;
+   os << "" << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    // Overflow detection." << endl;
+   os << "    //--------------------------------------------------//" << endl;
+   os << "    always_ff @(posedge clk)" << endl;
+   os << "        if (reset)" << endl;
+   os << "            overflow <= 1'b0; " << endl;
+   os << "        else if (vec_cnt == 0)" << endl;
+   os << "            overflow <= 1'b0;" << endl;
+   os << "        else if (overflow_int & enable_f)" << endl;
+   os << "            overflow <= 1'b1;" << endl;
+   os << "" << endl;
+   os << "endmodule" << endl;
+
+   os << "module memory(clk, data_in, data_out, addr, wr_en);" << endl;
+   os << "   " << endl;
+   os << "   parameter WIDTH=16, SIZE=64, LOGSIZE=6;" << endl;
+   os << "   input [WIDTH-1:0] data_in;" << endl;
+   os << "   output logic [WIDTH-1:0] data_out;" << endl;
+   os << "   input [LOGSIZE-1:0]      addr;" << endl;
+   os << "   input                    clk, wr_en;" << endl;
+   os << "   " << endl;
+   os << "   logic [SIZE-1:0][WIDTH-1:0] mem;" << endl;
+   os << "   " << endl;
+   os << "   always_ff @(posedge clk) begin" << endl;
+   os << "      data_out <= mem[addr];" << endl;
+   os << "	  if (wr_en)" << endl;
+   os << "	    mem[addr] <= data_in;" << endl;
+   os << "   end" << endl;
+   os << "endmodule" << endl;
+
    // close the output stream
    os.close();
-
-   int M = atoi(argv[2]);
-   int N = (mode == 2) ? atoi(argv[2]) : atoi(argv[3]);
-   int P = atoi(argv[4]);
-   int M1 = atoi(argv[3]);
-   int M2 = atoi(argv[4]);
-   int M3 = atoi(argv[5]);
-   int bits = (mode == 2) ? atoi(argv[7]) : atoi(argv[5]);
-   int mult_budget = atoi(argv[6]);
-
-   string out_file;
-   if (mode == 2)
-      out_file = "network_" + to_string(N) + "_" + to_string(M1) + "_" + to_string(M2) + "_" + to_string(M3) + "_" + to_string(mult_budget) + "_" + to_string(bits) + ".sv";
-   else
-      out_file = "layer_" + to_string(M) + "_" + to_string(N) + "_" + to_string(P) + "_" + to_string(bits) + ".sv";
-
-   string append_mac_cmd = "cat mac.sv >> " + out_file;
-   string append_mem_cmd = "cat memory.sv >> " + out_file;
-
-   system(append_mac_cmd.c_str());
-   system(append_mem_cmd.c_str());
 
 }
 
@@ -582,12 +715,14 @@ void genAllLayers(int N, int M1, int M2, int M3, int mult_budget, int bits, vect
    int P2 = layer_params[1];
    int P3 = layer_params[2];
 
-   int l1_cost = (1 + N  + (M1/P1)*(N +3+P1));
-   int l2_cost = (1 + M1 + (M2/P2)*(M1+3+P2));
-   int l3_cost = (1 + M2 + (M3/P3)*(M2+3+P3));
-   int max = MAX(l1_cost, MAX(l2_cost, l3_cost));
+   int max = MAX(layer_cost[0], MAX(layer_cost[1], layer_cost[2]));
 
-   cout << "Throughput: " << max << endl;
+   if(layer_cost[0] == max)
+      cout << "Throughput: " << (1 + N  + (M1/P1)*(N+3+P1))  << endl;
+   else if(layer_cost[1] == max)
+      cout << "Throughput: " << (1 + M1 + (M2/P2)*(M1+3+P2)) << endl;
+   else if(layer_cost[2] == max)
+      cout << "Throughput: " << (1 + M2 + (M3/P3)*(M2+3+P3)) << endl;
 
    //Generating File Header
    os << "// ------------------------------------------//" << endl;
